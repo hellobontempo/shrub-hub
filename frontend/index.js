@@ -19,7 +19,7 @@ function sendIdentification() {
     Promise.all(promises).then((base64files) => {
     //   console.log(base64files)     
       const data = {
-            api_key: `key`,
+            api_key: `API KEY HERE IDK HOW TO DO IT`,
             images: base64files,
             modifiers: ["crops_fast", "similar_images"],
             plant_language: "en",
