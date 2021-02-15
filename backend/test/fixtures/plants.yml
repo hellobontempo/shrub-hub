@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sci_name: MyString
+  care: MyText
+  common_name: MyString
+
+two:
+  sci_name: MyString
+  care: MyText
+  common_name: MyString
