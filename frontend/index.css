@@ -10,7 +10,16 @@ body, html {
   background-size: auto auto;
 }
 
+.container {
+    padding: 1rem;
+    width: stretch;
+    height: auto;
+    display: none;
+    opacity: .8;
+  }
+ 
 
+  
 button {
 	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
 	background-color:#599bb3;
@@ -56,3 +65,34 @@ div.results {
   }
   
         
+div.right-container{
+    align-content: center;
+    text-align: center;
+    top: 20px;
+    max-height: fit-content;
+    width: 400px; 
+    right:20px; 
+    bottom: 0;
+    position:absolute;
+    background-color:rgba(255, 255, 255, 0.836)
+}  
+
+div.game-container{
+    align-content: center;
+    text-align: center;
+    top: 100px;
+    max-height: 400px;
+    width: 400px; 
+    left:100px; 
+    bottom: 0;
+    position:absolute;
+    background-color:rgba(255, 255, 255, 0.952)
+}  
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    grid-auto-rows: 100px;
+  }

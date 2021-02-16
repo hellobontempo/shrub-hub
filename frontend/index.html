@@ -7,16 +7,34 @@
 </head>
 
 <body>
-  <div id="plant-search-form">
-    <form id="plant-search-form">
-      <input type="file" class="input" multiple />
-      <button type="button" id="fetch-plants">get my shrub on</button>
-    </form>
+  <center><div class="container" id="plant-search-form">
+      <form id="plant-search-form">
+        <input type="file" class="input" multiple />
+        <button type="button" id="fetch-plants">get my shrub on</button>
+      </form>
+    <div class="results" hidden id="result-div">
+      <ul id="plant-search-results"> </ul>
+    </div>
   </div>
-  <h1>Is This Your Plant?</h1>
-  <ul id="plant-search-results"> 
+</center>
+  <p style="text-align:center">
+    <button id="id-plant-btn">Identify a plant!</button>
+    <button type="button" id="plant-collection-btn">my plants</button>
+  </p>
 
-  </ul>
+  <div class="game-container" id="game-container">
+    <h2>Are you a good plant parent?</h2>
+    <img src="icons/snake_plant.jpg" width="150">
+  </div>
+
+
+    
+  <div class="right-container" id="plant-collection" hidden>
+    <h4>Plant Collection</h4>
+    <div class="wrapper" id="plant-grid">
+      <!-- plant collection renders here-->
+    </div>
+  </div>
 
 <script src="./index.js"></script>
 <script src="./src/plant.js"></script>
