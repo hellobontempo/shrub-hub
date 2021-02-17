@@ -68,7 +68,7 @@ div.results {
 div.right-container{
     align-content: center;
     text-align: center;
-    top: 20px;
+    top: 100px;
     max-height: fit-content;
     width: 400px; 
     right:20px; 
@@ -80,10 +80,10 @@ div.right-container{
 div.game-container{
     align-content: center;
     text-align: center;
-    top: 100px;
-    max-height: 400px;
-    width: 400px; 
-    left:100px; 
+    top: 175px;
+    max-height: 500px;
+    width: 500px; 
+    left: 200px; 
     bottom: 0;
     position:absolute;
     background-color:rgba(255, 255, 255, 0.952)

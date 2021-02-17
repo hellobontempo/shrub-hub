@@ -7,16 +7,19 @@
 </head>
 
 <body>
-  <center><div class="container" id="plant-search-form">
+  <center>
+    <div class="container" id="plant-search-form">
       <form id="plant-search-form">
         <input type="file" class="input" multiple />
         <button type="button" id="fetch-plants">get my shrub on</button>
       </form>
-    <div class="results" hidden id="result-div">
+    </div>
+  </center>
+    <div class="right-container"  hidden id="result-div">
       <ul id="plant-search-results"> </ul>
     </div>
-  </div>
-</center>
+  
+
   <p style="text-align:center">
     <button id="id-plant-btn">Identify a plant!</button>
     <button type="button" id="plant-collection-btn">my plants</button>
@@ -40,7 +43,7 @@
 <script src="./src/plant.js"></script>
 <script src="./src/user.js"></script>
 <script src="./src/api_key.js"></script>
-<script src="./src/id_plants.js"></script>
+<script src="./src/plantIdApi.js"></script>
 
 </body>
 

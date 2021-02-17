@@ -6,13 +6,13 @@ plantCollectionButton.addEventListener('click', () => {
     displayPlants = !displayPlants;
     if (displayPlants) {
       plantCollection.hidden = false;
+      resultDiv.hidden = true
     } else {
       plantCollection.hidden = true;
     }
   });
 
 let updateCollection = function (plantData){
-    resultDiv.hidden = true
     renderPlant(plantData)
     plantCollection.hidden = false
     displayPlants = true
