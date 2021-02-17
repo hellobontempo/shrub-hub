@@ -34,10 +34,24 @@ button {
 	text-decoration:none;
 }
 
+.button {
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Courier New;
+	font-size: 20px;
+	font-weight:bold;
+	padding:13px 20px;
+	text-decoration:none;
+}
+
 .input {
 	background-color:#245668;
 	border-radius:8px;
-	display:inline-block;
+	display:inline;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Courier New;
@@ -81,7 +95,7 @@ div.collection-form-container{
     align-content: center;
     text-align: center;
     top: 175px;
-    max-height: 500px;
+    max-height: fit-content;
     width: 500px; 
     left: 200px; 
     bottom: 0;
@@ -89,10 +103,27 @@ div.collection-form-container{
     background-color:rgba(255, 255, 255, 0.952)
 }  
 
+img {
+  width: 100px;
+  /* height: auto; */
+  /* width: 150px; */
+  /* object-fit: fill; */
+}
+
+
+.form-control {
+  display: inline-block;
+  width: 80%;
+  height: calc(1.5em + 0.75rem + 2px);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 2.5
+}
 
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
-    grid-auto-rows: 100px;
+    grid-auto-rows: minmax(100px, auto);
+    g
   }

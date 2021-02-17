@@ -31,7 +31,7 @@ class Plant {
 
       this.element = document.createElement('div')
       this.element.id = `plant-${this.id}`
-      this.element.innerHTML = `<img src="${this.img_src}" alt="${this.sci_name}" width="100">`
+      this.element.innerHTML = `<img src="${this.img_src}" alt="${this.sci_name}">`
       //add event listener to click on image
 
       Plant.all.push(this)
@@ -39,6 +39,11 @@ class Plant {
 
   renderPlant(){
       Plant.plantGrid.appendChild(this.element)
+  }
+
+  renderPlantChecklist(){
+    this.element.innerHTML += `<input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}">`
+    checkBoxPlantDiv.appendChild(this.element)
   }
 
 

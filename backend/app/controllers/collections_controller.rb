@@ -16,7 +16,7 @@ class CollectionsController < ApplicationController
   # POST /collections
   def create
     @collection = Collection.new(collection_params)
-
+    # @collection.plant_ids = params[:plant_ids]
     if @collection.save
       render json: @collection, status: :created, location: @collection
     else
@@ -46,6 +46,6 @@ class CollectionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def collection_params
-      params.require(:collection).permit(:name, :user)
+      params.require(:collection).permit(:name, :user, plant_ids:[])
     end
 end

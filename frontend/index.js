@@ -1,12 +1,19 @@
-const idBtn = document.querySelector("#id-plant-btn");
-const plantFormContainer = document.querySelector(".container")
 const port = 'http://localhost:3000'
 const plantApi = new PlantApi(port)
-const plantGrid = document.getElementById("plant-grid")
-const collectionBtn = document.getElementById("make-collection-button")
-const collectionForm = document.getElementById("collection-form-container")
+const collectionApi = new CollectionApi(port)
 
-let idPlant = false
+const idBtn = document.querySelector("#id-plant-btn");
+const plantFormContainer = document.querySelector(".container")
+
+//const plantGrid = document.getElementById("plant-grid")
+const collectionBtn = document.getElementById("make-collection-button")
+const collectionFormContainer = document.getElementById("collection-form-container")
+const checkBoxPlantDiv = document.getElementById("checkbox-plant-list")
+const collectionForm = document.getElementById("collection-form")
+
+collectionForm.addEventListener("submit", handleSubmit)
+
+let idPlant = false //hide and seek with ID plant form
 idBtn.addEventListener("click", () => {
     // hide & seek with the form
     idPlant = !idPlant;
@@ -19,14 +26,22 @@ idBtn.addEventListener("click", () => {
     }
   });
 
-let showCollectionForm = false
+let showCollectionForm = false //hide and seek with create collection form
 collectionBtn.addEventListener("click", () => {
   showCollectionForm = !showCollectionForm;
   if (showCollectionForm) {
-    collectionForm.hidden = false
+    collectionFormContainer.hidden = false
   } else {
-    collectionForm.hidden = true
+    collectionFormContainer.hidden = true
   }
 })
 
+function handleSubmit(e){
+  e.preventDefault()
+  collectionApi.createCollection()
+  e.target.reset()
+}
+
 plantApi.getPlants()
+plantApi.getCheckListPlants()
+

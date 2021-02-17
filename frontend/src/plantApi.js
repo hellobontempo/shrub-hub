@@ -24,6 +24,18 @@ class PlantApi {
                 )})                
     }
 
+    getCheckListPlants() {
+        fetch(this.baseUrl)
+            .then(r => r.json())
+                .then(data => { 
+                    data.forEach(element => {
+                        const p = new Plant(element)
+                        p.renderPlantChecklist()
+                        }
+                )})                
+    }
+
+
  
 }
 
