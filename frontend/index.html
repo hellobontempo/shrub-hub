@@ -22,29 +22,33 @@
 
   <p style="text-align:center">
     <button id="id-plant-btn">Identify a plant!</button>
-    <button type="button" id="plant-collection-btn">my plants</button>
+    <button type="button" id="plant-collection-btn">All Plants</button>
+    <button type="button" id="make-collection-button">Make A Collection</button>
   </p>
-
-  <div class="game-container" id="game-container">
-    <h2>Plant game?</h2>
-   <!-- <img src="icons/snake_plant.jpg" width="150">-->
-  </div>
-
-
-    
-  <div class="right-container" id="plant-collection" hidden>
-    <h4>Plant Collection</h4>
-    <div class="wrapper" id="plant-grid">
-      <!-- plant collection renders here-->
+  <div style="width: 100%">
+    <div style="width: 50%; float: left"> 
+      <div class="collection-form-container" id="collection-form-container" hidden>
+        <h2>Make your own Collection!</h2>
+      <!-- <img src="icons/snake_plant.jpg" width="150">-->
+      </div>
     </div>
+
+    <div style="width: 40%; float: right">  
+      <div class="right-container" id="plant-collection" hidden>
+        <h4>Plant Collection</h4>
+        <div class="wrapper" id="plant-grid">
+          <!-- plant collection renders here-->
+        </div>
+      </div>
   </div>
-
-
-<script src="./src/plant.js"></script>
-<script src="./src/user.js"></script>
 <script src="./src/api_key.js"></script>
+<script src="./src/plant.js"></script>
 <script src="./src/plantIdApi.js"></script>
 <script src="./src/plantApi.js"></script>
+<script src="./src/collection.js"></script>
+<script src="./src/collectionApi.js"></script>
+<script src="./src/plant_collection.js"></script>
+
 <script src="./index.js"></script>
 </body>
 
