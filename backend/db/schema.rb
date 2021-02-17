@@ -10,17 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_15_213228) do
+ActiveRecord::Schema.define(version: 2021_02_17_193707) do
+
+  create_table "collections", force: :cascade do |t|
+    t.string "name"
+    t.string "user"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "plant_collections", force: :cascade do |t|
+    t.integer "collection_id", null: false
+    t.integer "plant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["collection_id"], name: "index_plant_collections_on_collection_id"
+    t.index ["plant_id"], name: "index_plant_collections_on_plant_id"
+  end
 
   create_table "plants", force: :cascade do |t|
     t.string "sci_name"
     t.text "care"
     t.string "common_name"
-    t.integer "light"
-    t.integer "water"
     t.string "img_src"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "plant_collections", "collections"
+  add_foreign_key "plant_collections", "plants"
 end

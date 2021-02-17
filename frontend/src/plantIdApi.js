@@ -3,6 +3,7 @@ const resultDiv = document.getElementById('result-div')
 
 document.getElementById('fetch-plants').addEventListener('click', sendIdentification)
 
+
 function sendIdentification() {
     const files = [...document.querySelector('input[type=file]').files];
     const promises = files.map((file) => {
@@ -47,6 +48,7 @@ function sendIdentification() {
             console.error('Error:', error);
         });
     })  
+
 };
 
 function renderPlantResults(plants){
@@ -59,8 +61,8 @@ function renderPlantResults(plants){
                         <strong class="name">Botanical Name: ${plant.plant_name}</strong><br>
                         <img src="${plant.similar_images[0].url}" alt="${plant.plant_name}" width="300"><br>
                         <span class="common-names">Common Name(s): ${plant.plant_details.common_names.join(", ")}</span> 
-                        <p class="description" target="_blank">${plant.plant_details.wiki_description.value}</p> 
-                        <a href="${plant.plant_details.url}">Click for More Information</a>
+                        <p class="description">${plant.plant_details.wiki_description.value}</p> 
+                        <a href="${plant.plant_details.url}" target="_blank">Click for More Information</a>
                         <button class="add" data-id="${plant.id}">Save to Collection</button>
                         </div>
                         `
@@ -86,10 +88,8 @@ function handleClick(e) {
             }, 
             body: JSON.stringify(plantInfo)
         }
-
-        fetch("http://localhost:3000/plants", configObj)
-            .then (r => r.json())
-                .then (json => updateCollection(json))
+        plantApi.createPlant(configObj)
+        
     }   
 }
 

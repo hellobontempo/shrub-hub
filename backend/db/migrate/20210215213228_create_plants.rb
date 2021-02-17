@@ -4,8 +4,6 @@ class CreatePlants < ActiveRecord::Migration[6.1]
       t.string :sci_name
       t.text :care
       t.string :common_name
-      t.integer :light
-      t.integer :water
       t.string :img_src
       t.timestamps
     end
