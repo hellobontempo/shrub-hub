@@ -38,7 +38,7 @@ class PlantApi {
                 .then(data => { 
                     data.forEach(element => {
                         const p = new Plant(element)
-                        p.renderPlant()
+                        p.renderPlant(plantGrid)
                         }
                 )})                
     }

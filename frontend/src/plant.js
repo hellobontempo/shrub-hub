@@ -12,7 +12,7 @@ class Plant {
 
       this.element = document.createElement('div')
       this.element.id = `plant-${this.id}`
-      this.element.innerHTML = `<img src="${this.img_src}" alt="${this.sci_name}">`
+      this.element.innerHTML = `<img src="${this.img_src}" alt="${this.sci_name}"><br>`
       this.element.addEventListener('click', this.displayInfo)
   
 
@@ -33,7 +33,6 @@ class Plant {
     let n = this.querySelector("img").alt
     let p = Plant.filter(n)
     alert(`This plant is ${p.sci_name}, commonly known as ${p.common_name}`)
-
   }
 
   renderPlant(htmlElement){

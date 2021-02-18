@@ -120,6 +120,16 @@ div.collection-form-container{
     background-color:rgba(255, 255, 255, 0.952)
 }  
 
+.form-control {
+  display: inline-block;
+  width: 80%;
+  height: calc(1.5em + 0.75rem + 2px);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 2.5;
+
+}
+
 img {
   height: 200px;
   width: auto; 
@@ -136,21 +146,16 @@ nav {
   list-style: none;
 }
 
-
-.form-control {
+.tooltip {
+  position: relative;
   display: inline-block;
-  width: 80%;
-  height: calc(1.5em + 0.75rem + 2px);
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 2.5;
-
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
 .wrapper {
     display: grid;
     align-self: left;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0px;
     grid-auto-rows: minmax(200px, auto);
     
