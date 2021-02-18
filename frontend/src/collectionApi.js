@@ -23,6 +23,7 @@ class CollectionApi{
     const checkedPlants = document.querySelectorAll('input[name="plant_ids"]:checked'); 
     let array = []
     checkedPlants.forEach(element => array.push(parseInt(element.value, 10)))
+    
     const collectionInfo = {
         collection: {
         name: collectionNameInput.value,

@@ -9,16 +9,16 @@
 <body>
 
     <div class="container" id="plant-search-form">
-      <form id="plant-search-form">
+      <!--<form id="plant-search-form">
         <input type="file" class="input" multiple />
         <button type="button" id="fetch-plants">get my shrub on</button>
-      </form>
-      <form id="add-plant-form">
-        <input type="text" class="input" placeholder="Scientific Name">
-        <input type="text" class="input" placeholder="Common Names">
-        <input type="text" class="input" placeholder="Care Instructions">
-        <input type="text" class="input" placeholder="Image Url">
-        <button type="submit" id="add-plant-btn">get my shrub on</button>
+      </form>-->
+      <form id="add-plant-form" class="form-control">
+        <input type="text" name="plant-sci-name" id="plant-sci-name" placeholder="Scientific Name">
+        <input type="text" name="plant-common-name" id="plant-common-name" placeholder="Common Names">
+        <input type="text" name="plant-image-url" id="plant-image-url" placeholder="Image Url"><br>
+        <textarea form="add-plant-form" name="plant-care" id="plant-care" placeholder="Care Instructions" rows="4" cols="50"></textarea><br>
+        <button type="submit" id="add-plant-btn">create plant</button>
       </form>
     </div>
   

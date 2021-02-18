@@ -1,10 +1,29 @@
+const sciNameInput = document.querySelector("#plant-sci-name")
+const commonNameInput = document.querySelector("#plant-common-name")
+const imageUrlInput = document.querySelector("#plant-image-url")
+const careInput = document.querySelector("#plant-care")
+
 class PlantApi {
    
     constructor(port){
         this.baseUrl = `${port}/plants`
     }
 
-    createPlant(configObj){
+    createPlant(){
+        const plantInfo = {
+            sci_name: sciNameInput.value,
+            common_name: commonNameInput.value,
+            img_src: imageUrlInput.value,
+            care: careInput.value
+        }
+        const configObj = {
+            method: 'POST', 
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            }, 
+            body: JSON.stringify(plantInfo)
+        }
         fetch(this.baseUrl, configObj)
             .then (r => r.json())
                 .then (json => { 

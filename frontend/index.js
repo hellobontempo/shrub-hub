@@ -14,18 +14,20 @@ const collectionBtn = document.getElementById("make-collection-button")
 const collectionFormContainer = document.getElementById("collection-form-container")
 const checkBoxPlantDiv = document.getElementById("checkbox-plant-list")
 const collectionForm = document.getElementById("collection-form")
+const addPlantForm = document.getElementById("add-plant-form")
 
+addPlantForm.addEventListener("submit", handleNewPlantSubmit)
 collectionForm.addEventListener("submit", handleSubmit)
 
-let idPlant = false //hide and seek with ID plant form
-idBtn.addEventListener("click", () => {
+let addPlant = false //hide and seek with ID plant form
+addPlantShowFormBtn.addEventListener("click", () => {
     // hide & seek with the form
-    idPlant = !idPlant;
-    if (idPlant) {
-      idBtn.innerText = "Nevermind...(Hide Form)"
+    addPlant = !addPlant;
+    if (addPlant) {
+      addPlantShowFormBtn.innerText = "Nevermind...(Hide Form)"
       plantFormContainer.style.display = "block";
     } else {
-      idBtn.innerText = "Identify a plant!";
+      addPlantShowFormBtn.innerText = "Add a plant!";
       plantFormContainer.style.display = "none";
     }
   });
@@ -60,6 +62,12 @@ plantCollectionButton.addEventListener('click', () => { //hide and seek plant co
 function handleSubmit(e){
   e.preventDefault()
   collectionApi.createCollection()
+  e.target.reset()
+}
+
+function handleNewPlantSubmit(e){
+  e.preventDefault()
+  plantApi.createPlant()
   e.target.reset()
 }
 
