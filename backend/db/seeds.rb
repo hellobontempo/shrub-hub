@@ -38,7 +38,7 @@ tropics = Plant.create([
     },
     {sci_name: "Botanical Name: Epipremnum",
     care: "Epipremnum is a genus of flowering plants in the family Araceae, found in tropical forests from China, the Himalayas, and Southeast Asia to Australia the western Pacific. They are evergreen perennial vines climbing with the aid of aerial roots. They may be confused with other Monstereae such as Rhaphidophora, Scindapsus and Amydrium. All parts of the plants are toxic, mostly due to trichosclereids (long sharp cells) and raphides. Plants can grow to over 40 m (131 ft) with leaves up to 3 m (10 ft) long, but in containers the size is much reduced. The plants, commonly known as centipede tongavine, pothos or devil's ivy, depending on species, are typically grown as houseplants in temperate regions. Juvenile leaves are bright green, often with irregularly variegated patterns of yellow or white. They may find host trees by the use of Skototropism.",
-    common_name: "Common Name(s): Centipede tongavine, Pothos, Devil's ivy",
+    common_name: "Centipede tongavine, Pothos, Devil's ivy",
     img_src: "http://cdn.shopify.com/s/files/1/0847/2842/products/Devils-Ivy-Highgate-Flowers_2_grande.jpg?v=1561024604"
     }
 ])
@@ -46,17 +46,17 @@ tropics = Plant.create([
 Plant.create([
     {sci_name: "Botanical Name: Helleborus niger",
     care: "Helleborus niger, commonly called Christmas rose or black hellebore, is an evergreen perennial flowering plant in the buttercup family, Ranunculaceae. It is poisonous. Although the flowers resemble wild roses (and despite its common name), Christmas rose does not belong to the rose family (Rosaceae).",
-    common_name: "Common Name(s): Christmas rose, Black hellebore",
+    common_name: "Christmas rose, Black hellebore",
     img_src: "https://static.ashwoodnurseries.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/l/black_double_resized.jpg"
     },
     {sci_name: "Botanical Name: Zamioculcas",
     care: "Zamioculcas (common names Zanzibar gem, ZZ plant, Zuzu plant, aroid palm, eternity plant or emerald palm) is a genus of flowering plant in the family Araceae, containing the single species Zamioculcas zamiifolia. It is a tropical perennial plant native to eastern Africa, from Kenya south to northeastern South Africa. Zamioculcas is grown as an ornamental plant, mainly for its attractive glossy foliage and easy care. Dutch nurseries started wide-scale commercial propagation of the plant around 1996. It was first described as Caladium zamiifolium by Loddiges in 1829, moved to his new genus Zamioculcas by Heinrich Wilhelm Schott and given its established name Zamioculcas zamiifolia by Adolf Engler.",
-    common_name: "Common Name(s): Zanzibar gem, Zz plant, Zuzu plant, Aroid palm, Eternity plant, Emerald palm, Zamioculcas zamiifolia",
+    common_name: "Zanzibar gem, Zz plant, Zuzu plant, Aroid palm, Eternity plant, Emerald palm, Zamioculcas zamiifolia",
     img_src: "https://www.mydomaine.com/thmb/DIJr_inWdH5MgRYtoeoHUSTR0Uw=/1885x1414/smart/filters:no_upscale()/zz-plant-pot-f34da789c4c14ef7a247ebafcff7e9c3.jpg"
     },
     {sci_name: "Botanical Name: Philodendron hederaceum",
     care: "Philodendron hederaceum (common name: heartleaf philodendron synonym: Philodendron scandens) is a species of flowering plant in the family Araceae, native to Central America and the Caribbean.",
-    common_name: "Common Name(s): Heartleaf philodendron",
+    common_name: "Heartleaf philodendron",
     img_src: "https://img.sundaygardener.net/heartleaf-philodendron"
     },
     {sci_name: "Strelitzia",
