@@ -6,7 +6,7 @@ const collectionApi = new CollectionApi(port)
 const navBar = document.getElementById("nav-bar")
 const collectionBtnDiv = document.getElementById("collection-buttons")
 
-const idBtn = document.querySelector("#id-plant-btn");
+const addPlantShowFormBtn = document.querySelector("#add-plant-form-btn");
 const plantFormContainer = document.querySelector(".container")
 
 const plantGrid = document.getElementById("plant-grid")

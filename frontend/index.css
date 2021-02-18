@@ -19,6 +19,11 @@ body, html {
   }
  
 
+.activated {
+  background-color: #614d74;
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid;
+}
   
 button {
 	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
@@ -27,6 +32,19 @@ button {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
+	font-family: 'Optima', sans-serif;
+	font-size: 20px;
+	font-weight:bold;
+	padding:13px 20px;
+	text-decoration:none;
+}
+
+button:active {
+	background:linear-gradient(to bottom, #614d74 5%, #5c4092 100%);
+	background-color:#562e5e;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
 	font-family: 'Optima', sans-serif;
 	font-size: 20px;
 	font-weight:bold;

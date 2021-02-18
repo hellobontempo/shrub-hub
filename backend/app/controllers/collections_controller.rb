@@ -16,7 +16,8 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     if @collection.save
-      render json: { id: @collection.id, name: @collection.name, user: @collection.user, plant_ids: @collection.plant_ids }.to_json #status: :created, location: @collection
+      render json: @collection.to_json(include: [:plants])#status: :created, location: @collection
+      # render json: { id: @collection.id, name: @collection.name, user: @collection.user, plant_ids: @collection.plant_ids }.to_json 
     else
       render json: @collection.errors, status: :unprocessable_entity
     end
