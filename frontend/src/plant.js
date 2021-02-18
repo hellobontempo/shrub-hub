@@ -31,7 +31,7 @@ class Plant {
 
   displayInfo(){
     let n = this.querySelector("img").alt
-    console.log(Plant.filter(n))
+    alert(Plant.filter(n))
 
   }
 

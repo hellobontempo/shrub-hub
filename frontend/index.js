@@ -50,10 +50,8 @@ plantCollectionButton.addEventListener('click', () => { //hide and seek plant co
     displayPlants = !displayPlants;
     if (displayPlants) {
       collectionBtnDiv.hidden = false;
-      resultDiv.hidden = true
     } else {
       collectionBtnDiv.hidden = true;
-      resultDiv.hidden = false
     }
   });
 

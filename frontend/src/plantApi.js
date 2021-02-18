@@ -28,7 +28,7 @@ class PlantApi {
             .then (r => r.json())
                 .then (json => { 
                     const p = new Plant(json)
-                    p.renderPlant()
+                    p.renderPlant(plantGrid)
                 })
     }
 
