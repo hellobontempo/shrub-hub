@@ -31,7 +31,8 @@ class Plant {
 
   displayInfo(){
     let n = this.querySelector("img").alt
-    alert(Plant.filter(n))
+    let p = Plant.filter(n)
+    alert(`This plant is ${p.sci_name}, commonly known as ${p.common_name}`)
 
   }
 
