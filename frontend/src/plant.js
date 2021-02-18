@@ -1,20 +1,3 @@
-const plantCollectionButton = document.getElementById("plant-collection-btn")
-// const plantGrid = document.getElementById("plant-grid")
-
-let displayPlants = false
-
-plantCollectionButton.addEventListener('click', () => {
-    displayPlants = !displayPlants;
-    if (displayPlants) {
-      plantCollection.hidden = false;
-      resultDiv.hidden = true
-    } else {
-      plantCollection.hidden = true;
-      resultDiv.hidden = false
-    }
-  });
-
-
 class Plant {
 
   static all = []
@@ -30,13 +13,30 @@ class Plant {
       this.element = document.createElement('div')
       this.element.id = `plant-${this.id}`
       this.element.innerHTML = `<img src="${this.img_src}" alt="${this.sci_name}">`
-      //add event listener to click on image
+      this.element.addEventListener('click', this.displayInfo)
+  
+
+      this.info = document.createElement('div')
+      this.info.id = `plant-${this.id}`
+      this.info.innerHTML = `<h1>${this.name}</h1>`
+      this.info.hidden = true
 
       Plant.all.push(this)
   }
 
-  renderPlant(){
-      plantGrid.appendChild(this.element)
+  static filter(name){
+    let p = Plant.all.filter(plant => plant.sci_name === `${name}`)
+    return p[0]
+  }
+
+  displayInfo(){
+    let n = this.querySelector("img").alt
+    console.log(Plant.filter(n))
+
+  }
+
+  renderPlant(htmlElement){
+    htmlElement.appendChild(this.element)
   }
 
   renderPlantChecklist(){

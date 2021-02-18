@@ -2,8 +2,9 @@ const port = 'http://localhost:3000'
 const plantApi = new PlantApi(port)
 const collectionApi = new CollectionApi(port)
 
-const plantCollection = document.getElementById("plant-collection")
+// const plantCollection = document.getElementById("plant-collection")  moved to collection class?
 const navBar = document.getElementById("nav-bar")
+const collectionBtnDiv = document.getElementById("collection-buttons")
 
 const idBtn = document.querySelector("#id-plant-btn");
 const plantFormContainer = document.querySelector(".container")
@@ -39,6 +40,23 @@ collectionBtn.addEventListener("click", () => {
   }
 })
 
+const plantCollectionButton = document.getElementById("plant-collection-btn")
+
+
+let displayPlants = false
+plantCollectionButton.addEventListener('click', () => { //hide and seek plant collection
+    displayPlants = !displayPlants;
+    if (displayPlants) {
+      collectionBtnDiv.hidden = false;
+      resultDiv.hidden = true
+    } else {
+      collectionBtnDiv.hidden = true;
+      resultDiv.hidden = false
+    }
+  });
+
+
+
 function handleSubmit(e){
   e.preventDefault()
   collectionApi.createCollection()
@@ -47,6 +65,4 @@ function handleSubmit(e){
 
 // plantApi.getPlants()
 plantApi.getCheckListPlants()
-
-
 collectionApi.getCollections()

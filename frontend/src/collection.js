@@ -1,28 +1,56 @@
 
-function Collection({id, name, user, plants}){
+class Collection {
+
+    static all = []
+    static container = document.getElementById("plant-collection")
+   
+    
+    constructor({id, name, user, plants}){
     this.id = id
     this.name = name
     this.user = user
     this.plants = plants
 
+    this.button = document.createElement('button')
+    this.button.innerHTML = `${this.name}`
+    this.button.id = `${this.id}`
+    this.button.addEventListener('click', this.showCollection)
 
-    // this.element = document.createElement('button')
-}
+   
+    this.grid = document.createElement('div') 
+    this.grid.setAttribute("class", "wrapper")
+    this.grid.id = `collection-${this.id}`
 
-
-
-const renderCollection = function(){
-    let plants = this.plants.map(plant => new Plant(plant))
-    for (const plant of plants){
-        plantGrid.appendChild(plant.element)
+    this.div = document.createElement('div')
+    this.div.id = `collection-${this.id}`
+    this.div.hidden = true
+    collectionBtnDiv.appendChild(this.button)
+    Collection.container.appendChild(this.div).appendChild(this.grid)
+    
+    Collection.all.push(this)
     }
-}
+
+    renderCollection(){   
+        let plants = this.plants.map(plant => new Plant(plant))
+        for (const plant of plants){
+            plant.renderPlant(this.grid)
+        }
+    }
 
 
-const handleCategoryClick = function(e){
-    debugger
-}
+    showCollection (event){
+        let c = Collection.all.filter(collection => collection.id === parseInt(`${event.target.id}`),10)
+        let cDiv = c[0].div
+        if (cDiv.hidden){
+            cDiv.hidden = false
+        }else{
+            cDiv.hidden = true
+        }
+    }
 
-Collection.prototype = {
-    renderCollection,
+
 }
+// Collection.prototype = {
+//     renderCollection,
+//     showCollection,
+// }

@@ -1,4 +1,4 @@
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Optima", sans-serif;}
 body, html {
   height: 100%;
   color: rgb(92, 91, 91);
@@ -27,7 +27,7 @@ button {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Courier New;
+	font-family: 'Optima', sans-serif;
 	font-size: 20px;
 	font-weight:bold;
 	padding:13px 20px;
@@ -41,7 +41,7 @@ button {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Courier New;
+	font-family: "Optima", sans-serif;
 	font-size: 20px;
 	font-weight:bold;
 	padding:13px 20px;
@@ -75,14 +75,14 @@ div.results {
     margin: auto;
     align-self: right;
     border: 3px solid #73AD21;
-    background-color:rgba(255, 255, 255, 0.705)
+ 
   }
   
         
 div.right-container{
     align-content: center;
     text-align: center;
-    top: 175px;
+    top: 120px;
     max-height: fit-content;
     width: auto; 
     right: 200px; 
@@ -95,19 +95,28 @@ div.collection-form-container{
     align-content: center;
     text-align: center;
     top: 175px;
+    padding-right: 125px;
     max-height: fit-content;
-    width: 500px; 
-    left: 200px; 
+    width: fit-content; 
+    left: 10px; 
     bottom: 0;
-    position:absolute;
     background-color:rgba(255, 255, 255, 0.952)
 }  
 
 img {
-  width: 100px;
-  /* height: auto; */
-  /* width: 150px; */
+  height: 200px;
+  width: auto; 
   /* object-fit: fill; */
+}
+
+nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
 }
 
 
@@ -122,8 +131,9 @@ img {
 
 .wrapper {
     display: grid;
+    align-self: left;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    grid-auto-rows: minmax(100px, auto);
-    g
-  }
+    gap: 0px;
+    grid-auto-rows: minmax(200px, auto);
+    
+}

@@ -1,23 +1,25 @@
 const collectionNameInput = document.querySelector("#collection-name")
 const collectionUserInput = document.querySelector("#collection-user")
 
-function CollectionApi(port){
+class CollectionApi{
+
+    constructor(port){
     this.baseUrl = `${port}/collections`
-}
+    }
 
 
-const getCollections = function () {
-    fetch(this.baseUrl)
-        .then(r => r.json())
-        .then(data => {
-            data.forEach(collection => {
-                const c = new Collection(collection)
-                c.renderCollection()
-        })
-    })
-}
+    getCollections() {
+        fetch(this.baseUrl)
+            .then(r => r.json())
+            .then(data => {
+                data.forEach(collection => {
+                    new Collection(collection).renderCollection()
 
-const createCollection = function () {
+            })})
+    }
+
+ 
+    createCollection () {
     const checkedPlants = document.querySelectorAll('input[name="plant_ids"]:checked');
     let array = []
     checkedPlants.forEach(element => array.push(parseInt(element.value, 10)))
@@ -44,10 +46,9 @@ const createCollection = function () {
                 const c = new Collection(json)
                 c.renderCollection()
             })
+}}
 
-}
-
-CollectionApi.prototype = {
-    createCollection,
-    getCollections
-}
+// CollectionApi.prototype = {
+//     createCollection,
+//     getCollections
+// }

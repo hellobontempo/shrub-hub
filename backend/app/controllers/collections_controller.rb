@@ -9,7 +9,7 @@ class CollectionsController < ApplicationController
 
   # GET /collections/1
   def show
-    render json: @collection
+    render json: @collection.to_json(include: [:plants])
   end
 
   # POST /collections
