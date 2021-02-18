@@ -2,10 +2,13 @@ const port = 'http://localhost:3000'
 const plantApi = new PlantApi(port)
 const collectionApi = new CollectionApi(port)
 
+const plantCollection = document.getElementById("plant-collection")
+const navBar = document.getElementById("nav-bar")
+
 const idBtn = document.querySelector("#id-plant-btn");
 const plantFormContainer = document.querySelector(".container")
 
-//const plantGrid = document.getElementById("plant-grid")
+const plantGrid = document.getElementById("plant-grid")
 const collectionBtn = document.getElementById("make-collection-button")
 const collectionFormContainer = document.getElementById("collection-form-container")
 const checkBoxPlantDiv = document.getElementById("checkbox-plant-list")
@@ -45,3 +48,5 @@ function handleSubmit(e){
 plantApi.getPlants()
 plantApi.getCheckListPlants()
 
+
+collectionApi.getCollections()

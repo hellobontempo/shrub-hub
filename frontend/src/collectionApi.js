@@ -6,6 +6,16 @@ function CollectionApi(port){
 }
 
 
+const getCollections = function () {
+    fetch(this.baseUrl)
+        .then(r => r.json())
+        .then(data => {
+            data.forEach(collection => {
+                const c = new Collection(collection)
+                c.renderCollection()
+        })
+    })
+}
 
 const createCollection = function () {
     const checkedPlants = document.querySelectorAll('input[name="plant_ids"]:checked');
@@ -30,10 +40,14 @@ const createCollection = function () {
 
     fetch(this.baseUrl, configObj)
         .then (r => r.json())
-            .then (json => {debugger})
+            .then (json => {
+                const c = new Collection(json)
+                c.renderCollection()
+            })
 
 }
 
 CollectionApi.prototype = {
-    createCollection
+    createCollection,
+    getCollections
 }

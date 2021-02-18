@@ -5,7 +5,7 @@ class PlantCollectionsController < ApplicationController
   def index
     @plant_collections = PlantCollection.all
 
-    render json: @plant_collections
+    render json: @plant_collections.to_json(include: [:plant, :collection])
   end
 
   # GET /plant_collections/1

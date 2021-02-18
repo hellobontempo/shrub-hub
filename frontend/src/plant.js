@@ -1,6 +1,5 @@
 const plantCollectionButton = document.getElementById("plant-collection-btn")
 // const plantGrid = document.getElementById("plant-grid")
-const plantCollection = document.getElementById("plant-collection")
 
 let displayPlants = false
 
@@ -19,7 +18,6 @@ plantCollectionButton.addEventListener('click', () => {
 class Plant {
 
   static all = []
-  static plantGrid = document.getElementById("plant-grid")
   
 
   constructor({id, sci_name, img_src, common_name, care}){
@@ -38,7 +36,7 @@ class Plant {
   }
 
   renderPlant(){
-      Plant.plantGrid.appendChild(this.element)
+      plantGrid.appendChild(this.element)
   }
 
   renderPlantChecklist(){

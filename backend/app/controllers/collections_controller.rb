@@ -3,9 +3,8 @@ class CollectionsController < ApplicationController
 
   # GET /collections
   def index
-    @collections = Collection.all
-
-    render json: @collections
+    collections = Collection.all
+    render json: collections.to_json(include: [:plants])
   end
 
   # GET /collections/1
@@ -16,9 +15,8 @@ class CollectionsController < ApplicationController
   # POST /collections
   def create
     @collection = Collection.new(collection_params)
-    # @collection.plant_ids = params[:plant_ids]
     if @collection.save
-      render json: @collection, status: :created, location: @collection
+      render json: { id: @collection.id, name: @collection.name, user: @collection.user, plant_ids: @collection.plant_ids }.to_json #status: :created, location: @collection
     else
       render json: @collection.errors, status: :unprocessable_entity
     end

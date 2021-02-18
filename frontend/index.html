@@ -15,15 +15,16 @@
       </form>
     </div>
   </center>
-    <div class="right-container"  hidden id="result-div">
-      <ul id="plant-search-results"> </ul>
-    </div>
+ 
   
 
   <p style="text-align:center">
     <button id="id-plant-btn">Identify a plant!</button>
     <button type="button" id="plant-collection-btn">All Plants</button>
     <button type="button" id="make-collection-button">Make A Collection</button>
+  </p>
+  <p style="text-align:center" id="nav-bar">
+  
   </p>
   <div style="width: 100%">
     <div style="width: 50%; float: left"> 
@@ -44,8 +45,11 @@
     </div>
 
     <div style="width: 40%; float: right">  
+      <div class="right-container" id="result-div" hidden>
+        <ul id="plant-search-results"> </ul>
+      </div>
       <div class="right-container" id="plant-collection" hidden>
-        <h4>Plant Collection</h4>
+        <h4>Plant Collections</h4>
         <div class="wrapper" id="plant-grid">
           <!-- plant collection renders here-->
         </div>
