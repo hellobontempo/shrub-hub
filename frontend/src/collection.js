@@ -1,21 +1,23 @@
 
-function Collection({id, name, user, plant_ids}){
+function Collection({id, name, user, plants}){
     this.id = id
     this.name = name
     this.user = user
-    this.plant_ids = plant_ids
+    this.plants = plants
+
+
     // this.element = document.createElement('button')
 }
 
-const plants = function() {
-    return Plant.all.filter((plant => plant.collection_id == this.id))
-}
+
+
 const renderCollection = function(){
-    let div = document.createElement('div')
-    div.innerHTML = `<button type="button" id="collection-${this.id}">${this.name}</button>`
-    div.addEventListener('click', handleCategoryClick)
-    navBar.appendChild(div)
+    let plants = this.plants.map(plant => new Plant(plant))
+    for (const plant of plants){
+        plantGrid.appendChild(plant.element)
+    }
 }
+
 
 const handleCategoryClick = function(e){
     debugger
@@ -23,5 +25,4 @@ const handleCategoryClick = function(e){
 
 Collection.prototype = {
     renderCollection,
-    plants
 }

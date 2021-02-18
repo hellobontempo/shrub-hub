@@ -45,7 +45,7 @@ function handleSubmit(e){
   e.target.reset()
 }
 
-plantApi.getPlants()
+// plantApi.getPlants()
 plantApi.getCheckListPlants()
 
 
