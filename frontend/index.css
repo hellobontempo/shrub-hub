@@ -15,6 +15,35 @@ body, html {
   border-radius: 0px 5px 5px 0px;
   border: 1px solid;
 }
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-dismissible {
+  padding-right: 3.8125rem;
+}
+
+.alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0.75rem 1.25rem;
+  color: inherit;
+}
+
+.alert-primary {
+  color: #1a3047;
+  background-color: #d6dfe7;
+  border-color: #c6d2de;
+}
+
+
   
 button {
 	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
@@ -41,6 +70,18 @@ button:active {
 	font-weight:bold;
 	padding:13px 20px;
 	text-decoration:none;
+}
+
+button:disabled {
+	background-color:#454246;
+  opacity: 80%;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	font-family: 'Optima', sans-serif;
+	font-size: 20px;
+	padding:13px 20px;
+	text-decoration:slategray;
 }
 
 .button {
@@ -86,11 +127,11 @@ div.results {
         
 div.right-container{
     align-content: center;
-    text-align: center;
+    text-align: left;
     top: 120px;
     max-height: fit-content;
     width: auto; 
-    right: 200px; 
+    left: 0; 
     bottom: 0;
     position:absolute;
     background-color:rgba(255, 255, 255, 0.836)
@@ -99,17 +140,16 @@ div.right-container{
 div.collection-form-container{
     align-content: center;
     text-align: center;
-    top: 175px;
-    padding-right: 125px;
+    top: 200px;
     max-height: fit-content;
     width: fit-content; 
-    left: 10px; 
     bottom: 0;
     background-color:rgba(255, 255, 255, 0.952)
 }  
 
 .form-control {
-  display: inline-block;
+  padding-top: 100px;
+  display: inline;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
   font-size: 0.875rem;

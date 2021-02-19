@@ -3,46 +3,48 @@ const plantApi = new PlantApi(port)
 const collectionApi = new CollectionApi(port)
 
 // const plantCollection = document.getElementById("plant-collection")  moved to collection class?
+//navigation buttons: 
 const navBar = document.getElementById("nav-bar")
-const collectionBtnDiv = document.getElementById("collection-buttons")
-
-const addPlantShowFormBtn = document.querySelector("#add-plant-form-btn");
-const plantFormContainer = document.querySelector("#create-a-plant-form")
-
-const plantGrid = document.getElementById("plant-grid")
+const plantCollectionButton = document.getElementById("plant-collection-btn")
 const collectionBtn = document.getElementById("make-collection-button")
-const collectionFormContainer = document.getElementById("collection-form-container")
-const checkBoxPlantDiv = document.getElementById("checkbox-plant-list")
-const collectionForm = document.getElementById("collection-form")
+const addPlantShowFormBtn = document.querySelector("#add-plant-form-btn");
+
+const plantFormContainer = document.querySelector("#create-a-plant-form")
 const addPlantForm = document.getElementById("add-plant-form")
+
+
+const collectionFormContainer = document.getElementById("collection-form-container")
+const collectionForm = document.getElementById("collection-form")
+
+const checkBoxPlantDiv = document.getElementById("checkbox-plant-list")
+const collectionBtnDiv = document.getElementById("collection-buttons")
+const plantGrid = document.getElementById("plant-grid")
 
 addPlantForm.addEventListener("submit", handleNewPlantSubmit)
 collectionForm.addEventListener("submit", handleSubmit)
 
-let addPlant = false //hide and seek with ID plant form
+let addPlant = false //hide and seek with add plant form
 addPlantShowFormBtn.addEventListener("click", () => {
     // hide & seek with the form
     addPlant = !addPlant;
     if (addPlant) {
       addPlantShowFormBtn.innerText = "Nevermind...(Hide Form)"
       plantFormContainer.style.display = "block";
+      plantCollectionButton.disabled = true
+      collectionBtn.disabled = true
     } else {
       addPlantShowFormBtn.innerText = "Add a plant!";
       plantFormContainer.style.display = "none";
+      plantCollectionButton.disabled = false
+      collectionBtn.disabled = false
     }
   });
 
 let showCollectionForm = false //hide and seek with create collection form
 collectionBtn.addEventListener("click", () => {
   showCollectionForm = !showCollectionForm;
-  if (showCollectionForm) {
-    collectionFormContainer.hidden = false
-  } else {
-    collectionFormContainer.hidden = true
-  }
+  showCollectionForm ? collectionFormContainer.hidden = false : collectionFormContainer.hidden = true
 })
-
-const plantCollectionButton = document.getElementById("plant-collection-btn")
 
 
 let displayPlants = false
@@ -50,8 +52,12 @@ plantCollectionButton.addEventListener('click', () => { //hide and seek plant co
     displayPlants = !displayPlants;
     if (displayPlants) {
       collectionBtnDiv.hidden = false;
+      addPlantShowFormBtn.disabled = true
+      collectionBtn.disabled = true
     } else {
       collectionBtnDiv.hidden = true;
+      addPlantShowFormBtn.disabled = false
+      collectionBtn.disabled = false
     }
   });
 
