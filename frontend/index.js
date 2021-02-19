@@ -28,7 +28,7 @@ addPlantShowFormBtn.addEventListener("click", () => {
     // hide & seek with the form
     addPlant = !addPlant;
     if (addPlant) {
-      addPlantShowFormBtn.innerText = "Nevermind...(Hide Form)"
+      addPlantShowFormBtn.innerText = "Nevermind..."
       plantFormContainer.style.display = "block";
       plantCollectionButton.disabled = true
       collectionBtn.disabled = true
@@ -54,10 +54,12 @@ plantCollectionButton.addEventListener('click', () => { //hide and seek plant co
       collectionBtnDiv.hidden = false;
       addPlantShowFormBtn.disabled = true
       collectionBtn.disabled = true
+      plantCollectionButton.innerText = "Hide Collections"
     } else {
       collectionBtnDiv.hidden = true;
       addPlantShowFormBtn.disabled = false
       collectionBtn.disabled = false
+      plantCollectionButton.innerText = "View Collections"
     }
   });
 
