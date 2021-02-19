@@ -11,9 +11,10 @@
     <!--<button id="id-plant-btn">Identify a plant!</button>-->
     <button id="add-plant-form-btn">Add a plant</button>
     <button type="button" id="plant-collection-btn">View Collections</button>
-    <button type="button" id="make-collection-button">Make A Collection</button>
+    <button type="button" id="make-collection-button">Make A Collection</button><br>
   </nav>
-  
+    <div id="collection-buttons" hidden> </div>
+ 
   <div class="container" id="create-a-plant-form">
     <!--<form id="plant-search-form">
       <input type="file" class="input" multiple />
@@ -41,7 +42,6 @@
             <label for="plant-list">Select Plants:</label>
               <div class="wrapper" id="checkbox-plant-list">
               <!--render list of checkboxes here-->
-                
               </div>
             <input type="submit" value="Create" class="button">
         </form>
@@ -49,10 +49,6 @@
     </div>
 
     <div style="width: 40%; float: right">  
-      <div class="right-container" id="result-div" hidden>
-        <ul id="plant-search-results"> </ul>
-      </div>
-      <div id="collection-buttons" hidden> </div>
       <div class="right-container" id="plant-collection">
         <div class="wrapper" id="plant-grid">
           <!-- plant collection renders here-->

@@ -25,11 +25,11 @@ class PlantApi {
             body: JSON.stringify(plantInfo)
         }
         fetch(this.baseUrl, configObj)
-            .then (r => r.json())
-                .then (json => { 
-                    const p = new Plant(json)
-                    p.renderPlant(plantGrid)
-                })
+        .then (r => r.json())
+        .then (json => { 
+            const p = new Plant(json)
+            p.renderPlant(plantGrid)
+        })
     }
 
     getPlants() {
