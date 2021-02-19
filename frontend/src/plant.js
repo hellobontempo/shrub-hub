@@ -29,10 +29,10 @@ class Plant {
     return p[0]
   }
 
-  displayInfo(){
+  displayInfo(){ //change this, it is very annoying
     let n = this.querySelector("img").alt
     let p = Plant.filter(n)
-    alert(`This plant is ${p.sci_name}, commonly known as ${p.common_name}`)
+    alert(`This plant is ${p.sci_name}, commonly known as ${p.common_name}`) 
   }
 
   renderPlant(htmlElement){
@@ -46,30 +46,3 @@ class Plant {
 
 
 }
-
-// let updateCollection = function (plantData){
-//     renderPlant(plantData)
-//     plantCollection.hidden = false
-//     displayPlants = true
-// }
-
-// let getCollection = function () {
-//     fetch('http://localhost:3000/plants')
-//         .then(r => r.json())
-//             .then(data => renderCollection(data))
-//     }
-
-// let renderCollection = function(plants){
-//     plants.forEach(p => renderPlant(p))
-// }
-
-// let renderPlant = function(plant){
-//     const div = document.createElement('div')
-//     div.id = `plant-${plant.id}`
-//     div.innerHTML = `<img src="${plant.img_src}" alt="${plant.sci_name}" width="100">
-//     `
-//     plantGrid.appendChild(div)
-// }
-
-
-// getCollection()
