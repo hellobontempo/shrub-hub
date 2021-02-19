@@ -139,6 +139,7 @@ div.right-container{
 
 div.collection-form-container{
     align-content: center;
+    left: 0;
     text-align: center;
     top: 200px;
     max-height: fit-content;
@@ -157,8 +158,8 @@ div.collection-form-container{
 
 
 img {
-  height: 200px;
-  width: auto; 
+  height: auto;
+  width: 260px; 
   /* object-fit: fill; */
 }
 

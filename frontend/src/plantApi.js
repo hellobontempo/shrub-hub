@@ -30,7 +30,7 @@ class PlantApi {
             new Plant(json)
             const p = new Plant(json)
 
-            p.renderPlant(plantGrid)
+            p.renderPlant(checkBoxPlantDiv)
         })
     }
 
@@ -41,7 +41,7 @@ class PlantApi {
                     data.forEach(element => {
                         new Plant(element)
                         const p = new Plant(element)
-                        // p.renderPlant(plantGrid)
+                        p.renderPlant(checkBoxPlantDiv)
                     }
                 )
             }
@@ -54,7 +54,7 @@ class PlantApi {
                 .then(data => { 
                     data.forEach(element => {
                         const p = new Plant(element)
-                        // p.renderPlantChecklist()
+                        p.renderPlantChecklist()
                     }
                 )
             }
