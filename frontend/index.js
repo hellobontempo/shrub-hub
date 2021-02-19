@@ -110,6 +110,6 @@ function handleNewPlantSubmit(e){
   collectionBtn.disabled = false
 }
 
-// plantApi.getPlants()
 plantApi.getCheckListPlants()
 collectionApi.getCollections()
+

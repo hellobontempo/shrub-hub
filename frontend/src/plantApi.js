@@ -33,17 +33,29 @@ class PlantApi {
         })
     }
 
-    getPlants() {
+    // getPlants() {
+    //     fetch(this.baseUrl)
+    //         .then(r => r.json())
+    //             .then(data => { 
+    //                 debugger
+    //                 data.forEach(element => {
+    //                     const p = new PlantCard(element)
+    //                 })
+    //         })
+                      
+    // }
+
+    getPlants(num) {
         fetch(this.baseUrl)
             .then(r => r.json())
                 .then(data => { 
-                    data.forEach(element => {
+                    data.slice(0,num).forEach(element => {
                         const p = new PlantCard(element)
-                        // p.renderPlant(checkBoxPlantDiv)
-                    }
-                )
-            }
-        )                
+                        const q = new PlantCard(element)
+                    })
+                    PlantCard.appendCards()
+            })
+                      
     }
 
     getCheckListPlants() {
