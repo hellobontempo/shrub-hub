@@ -1,71 +1,81 @@
 <!DOCTYPE HTML>
 <html>
 
-<head>
-<title> SHRUB-HUB</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="index.css" />
-<!-- <link rel="stylesheet" href="game.css" /> -->
-</head>
+  <head>
+  <title> SHRUB-HUB</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="game.css"/>
 
-<body>
-  <nav class="navbar" id="nav-bar">
-    <!--<button id="id-plant-btn">Identify a plant!</button>-->
-    <button id="add-plant-form-btn">Add a plant</button>
-    <button type="button" id="plant-collection-btn">View Collections</button>
-    <button type="button" id="make-collection-button">Make A Collection</button><br>
-  </nav>
-    <div id="collection-buttons" hidden> </div>
- 
-  <div class="container" id="create-a-plant-form">
-    <!-- <form id="plant-search-form">
-      <input type="file" class="input" multiple />
-      <button type="button" id="fetch-plants">get my shrub on</button>
-    </form> -->
-    <h1>Hello there, fellow Flora Explora!</h1> 
-    <p>Add a plant below:</p>
-    <form id="add-plant-form" class="form-control">
-      <input type="text" name="plant-sci-name" id="plant-sci-name" placeholder="Scientific Name">
-      <input type="text" name="plant-common-name" id="plant-common-name" placeholder="Common Names">
-      <input type="text" name="plant-image-url" id="plant-image-url" placeholder="Image Url"><br>
-      <textarea form="add-plant-form" name="plant-care" id="plant-care" placeholder="Care Instructions" rows="4" cols="55"></textarea><br>
-      <button type="submit" id="add-plant-btn">create plant</button>
-    </form>
-  </div>
+  </head>
+
+  <body>
+    <nav class="navbar" id="nav-bar">
+      <!--<button id="id-plant-btn">Identify a plant!</button>-->
+      <button id="add-plant-form-btn">Add a plant</button>
+      <button type="button" id="plant-collection-btn">View Collections</button>
+      <button type="button" id="make-collection-button">Make A Collection</button>
+      <button type="button" id="show-game-btn">Play Memory Game</button>
+    </nav>
+    <div id="collection-buttons" hidden> <!-- collection buttons render here --> </div>
   
- 
-  <div id="game" class="body"></div>
-
-  <div style="width: 100%">
-    <div style="width: 50%; float:right"> 
-      
-      <div class="collection-form-container" id="collection-form-container" hidden>
-      <!-- collection form -->
-        <form id="collection-form" class="form-control"><br>
-            <input type="text" class="input" name="collection-name" id="collection-name" placeholder="Name your collection...">
-            <input type="text" class="input" name="collection-user" id="collection-user" placeholder="Your Name"><br>
-            <label for="plant-list">Select Plants:</label>
-              <div class="wrapper" id="checkbox-plant-list">
-              <!--render list of checkboxes here-->
-              </div>
-            <input type="submit" value="Create" class="button">
-        </form>
-      </div>
+    <div class="container" id="create-a-plant-form">
+      <!-- <form id="plant-search-form">
+        <input type="file" class="input" multiple />
+        <button type="button" id="fetch-plants">get my shrub on</button>
+      </form> -->
+      <h1>Hello there, fellow Flora Explora!</h1> 
+      <p>Add a plant below:</p>
+      <form id="add-plant-form" class="form-control">
+        <input type="text" name="plant-sci-name" id="plant-sci-name" placeholder="Scientific Name">
+        <input type="text" name="plant-common-name" id="plant-common-name" placeholder="Common Names">
+        <input type="text" name="plant-image-url" id="plant-image-url" placeholder="Image Url"><br>
+        <textarea form="add-plant-form" name="plant-care" id="plant-care" placeholder="Care Instructions" rows="4" cols="55"></textarea><br>
+        <button type="submit" id="add-plant-btn">create plant</button>
+      </form>
     </div>
 
-      <div class="collection-form-control" id="plant-collection">
-        <!-- plant collections render here-->
+   
+
+    <div style="width: 100%">
+      <!-- memory game -->
+      <div id="game" class="game" hidden>
+        <div id="game-grid" class="grid">
+          
+        </div>
+
       </div>
-  </div>
-<script src="./src/api_key.js"></script>
-<script src="./src/plant.js"></script>
-<script src="./src/plantIdApi.js"></script>
-<script src="./src/plantApi.js"></script>
-<script src="./src/collection.js"></script>
-<script src="./src/collectionApi.js"></script>
-<script src="./src/plant_collection.js"></script>
-<script src="./index.js"></script>
-<!-- <script src="./src/game.js"></script> -->
-</body>
+
+      <div style="width: 50%; float:right"> 
+        
+        <div class="collection-form-container" id="collection-form-container" hidden>
+        <!-- collection form -->
+          <form id="collection-form" class="form-control"><br>
+              <input type="text" class="input" name="collection-name" id="collection-name" placeholder="Name your collection...">
+              <input type="text" class="input" name="collection-user" id="collection-user" placeholder="Your Name"><br>
+              <label for="plant-list">Select Plants:</label>
+                <div class="wrapper" id="checkbox-plant-list">
+                <!--render list of checkboxes here-->
+                </div>
+              <input type="submit" value="Create" class="button">
+          </form>
+        </div>
+      </div>
+
+        <div class="collection-form-control" id="plant-collection">
+          <!-- plant collections render here-->
+        </div>
+    </div>
+      
+    <script src="./src/api_key.js"></script>
+    <script src="./src/plant.js"></script>
+    <script src="./src/plantIdApi.js"></script>
+    <script src="./src/plantApi.js"></script>
+    <script src="./src/collection.js"></script>
+    <script src="./src/collectionApi.js"></script>
+    <script src="./src/plant_collection.js"></script>
+    <script src="./index.js"></script>
+    <script src="./src/game.js"></script>
+  </body>
 
 </html>

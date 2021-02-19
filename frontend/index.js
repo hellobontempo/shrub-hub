@@ -7,7 +7,8 @@ const collectionApi = new CollectionApi(port)
 const navBar = document.getElementById("nav-bar")
 const plantCollectionButton = document.getElementById("plant-collection-btn")
 const collectionBtn = document.getElementById("make-collection-button")
-const addPlantShowFormBtn = document.querySelector("#add-plant-form-btn");
+const addPlantShowFormBtn = document.querySelector("#add-plant-form-btn")
+const showMemoryGameBtn = document.getElementById("show-game-btn")
 
 const plantFormContainer = document.querySelector("#create-a-plant-form")
 const addPlantForm = document.getElementById("add-plant-form")
@@ -18,6 +19,8 @@ const collectionForm = document.getElementById("collection-form")
 const checkBoxPlantDiv = document.getElementById("checkbox-plant-list")
 const collectionBtnDiv = document.getElementById("collection-buttons")
 const plantGrid = document.getElementById("plant-grid")
+const gameDiv = document.getElementById("game")
+
 
 addPlantForm.addEventListener("submit", handleNewPlantSubmit)
 collectionForm.addEventListener("submit", handleSubmit)
@@ -66,6 +69,24 @@ plantCollectionButton.addEventListener('click', () => {
       addPlantShowFormBtn.disabled = false
       collectionBtn.disabled = false
       plantCollectionButton.innerText = "View Collections"
+    }
+  });
+
+let displayGame = false
+showMemoryGameBtn.addEventListener('click', () => { 
+    displayPlants = !displayPlants;
+    if (displayPlants) {
+      gameDiv.hidden = false;
+      addPlantShowFormBtn.disabled = true
+      collectionBtn.disabled = true
+      plantCollectionButton.disabled = true
+      showMemoryGameBtn.innerText = "Hide Game"
+    } else {
+      gameDiv.hidden = true;
+      addPlantShowFormBtn.disabled = false
+      collectionBtn.disabled = false
+      plantCollectionButton.disabled = false
+      showMemoryGameBtn.innerText = "Play Memory Game"
     }
   });
 

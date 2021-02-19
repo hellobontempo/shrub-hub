@@ -38,9 +38,8 @@ class PlantApi {
             .then(r => r.json())
                 .then(data => { 
                     data.forEach(element => {
-                        new Plant(element)
-                        const p = new Plant(element)
-                        p.renderPlant(checkBoxPlantDiv)
+                        const p = new PlantCard(element)
+                        // p.renderPlant(checkBoxPlantDiv)
                     }
                 )
             }
