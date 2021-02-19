@@ -56,7 +56,3 @@ class Collection {
 
 
 }
-// Collection.prototype = {
-//     renderCollection,
-//     showCollection,
-// }

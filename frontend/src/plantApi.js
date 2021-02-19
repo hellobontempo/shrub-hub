@@ -39,8 +39,10 @@ class PlantApi {
                     data.forEach(element => {
                         const p = new Plant(element)
                         p.renderPlant(plantGrid)
-                        }
-                )})                
+                    }
+                )
+            }
+        )                
     }
 
     getCheckListPlants() {
@@ -50,10 +52,11 @@ class PlantApi {
                     data.forEach(element => {
                         const p = new Plant(element)
                         p.renderPlantChecklist()
-                        }
-                )})                
+                    }
+                )
+            }
+        )                
     }
-
 
  
 }
