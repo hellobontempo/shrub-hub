@@ -17,14 +17,12 @@ class Plant {
                                 <img src="${this.img_src}" alt="${this.sci_name}"><br>
                                 ${this.common_name}`
               
-      this.element.addEventListener('click', this.displayInfo)
-  
-
-      // this.info = document.createElement('div')
-      // this.info.id = `plant-${this.id}`
-      // this.info.innerHTML = `<h1>${this.name}</h1>`
+      this.info = document.createElement('div')
+      this.info.setAttribute("class", "hide")
+      this.info.id = `plant-${this.id}`
+      this.info.innerHTML = `<p>${this.care}</p>`
       // this.info.hidden = true
-
+      this.element.addEventListener('mouseover', (e) => this.displayInfo(e, this.info))
       Plant.all.push(this)
   }
 
@@ -33,10 +31,8 @@ class Plant {
     return p[0]
   }
 
-  displayInfo(){ //change this, it is very annoying
-    let n = this.querySelector("img").alt
-    let p = Plant.filter(n)
-    alert(`This plant is ${p.sci_name}, commonly known as ${p.common_name}`) 
+  displayInfo(e, care){ 
+   e.innerText = care.innerText
   }
 
   renderPlant(htmlElement){
