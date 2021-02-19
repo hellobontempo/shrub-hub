@@ -7,7 +7,7 @@ const navBar = document.getElementById("nav-bar")
 const collectionBtnDiv = document.getElementById("collection-buttons")
 
 const addPlantShowFormBtn = document.querySelector("#add-plant-form-btn");
-const plantFormContainer = document.querySelector(".container")
+const plantFormContainer = document.querySelector("#create-a-plant-form")
 
 const plantGrid = document.getElementById("plant-grid")
 const collectionBtn = document.getElementById("make-collection-button")
