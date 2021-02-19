@@ -14,29 +14,31 @@ class Plant {
       this.element.setAttribute("class", "box")
       this.element.id = `plant-${this.id}`
       this.element.innerHTML = `<h3>${this.sci_name}</h3>
-                                <img src="${this.img_src}" alt="${this.sci_name}"><br>
-                                ${this.common_name}`
-              
-      this.info = document.createElement('div')
-      this.info.setAttribute("class", "hide")
-      this.info.id = `plant-${this.id}`
-      this.info.innerHTML = `<p>${this.care}</p>`
-      // this.info.hidden = true
-      this.element.addEventListener('mouseover', (e) => this.displayInfo(e, this.info))
+                                <img id="img-${this.id}" src="${this.img_src}" alt="${this.sci_name}">
+                                <h4>${this.common_name}</h4>
+                                <p id="plant-${this.id}" hidden>${this.care}</p>`
+
+      this.element.addEventListener('mouseover', (e) => this.displayCare(e, this.element))
+      this.element.addEventListener('mouseout', (e) => this.displayPhoto(e, this.element))
       Plant.all.push(this)
-  }
-
-  static filter(name){
-    let p = Plant.all.filter(plant => plant.sci_name === `${name}`)
-    return p[0]
-  }
-
-  displayInfo(e, care){ 
-   e.innerText = care.innerText
   }
 
   renderPlant(htmlElement){
     htmlElement.appendChild(this.element)
+  }
+
+  displayCare(e, element){
+    let img = element.querySelector("img")
+    let p = element.querySelector("p")
+    img.hidden = true
+    p.hidden = false
+  }
+
+  displayPhoto(e, element){
+    let img = element.querySelector("img")
+    let p = element.querySelector("p")
+    img.hidden = false
+    p.hidden = true
   }
 
   renderPlantChecklist(){

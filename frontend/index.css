@@ -197,7 +197,9 @@ nav {
   float: right;
 }
 
-
+p {
+  line-height: 1em;
+}
 .wrapper {
     display: grid;
     align-self: left;
