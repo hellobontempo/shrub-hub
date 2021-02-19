@@ -15,7 +15,6 @@ class Collection {
     this.button.innerHTML = `${this.name}`
     this.button.id = `${this.id}`
     this.button.addEventListener('click', this.showCollection)
-
    
     this.grid = document.createElement('div') 
     this.grid.setAttribute("class", "wrapper")
@@ -39,12 +38,19 @@ class Collection {
 
 
     showCollection (event){
-        let c = Collection.all.filter(collection => collection.id === parseInt(`${event.target.id}`),10)
+        let id = parseInt(`${event.target.id}`)
+        let c = Collection.all.filter(collection => collection.id === id,10)
+        let rest = Collection.all.filter(collection => collection.id !== id,10)
         let cDiv = c[0].div
+        // let cButton = c[0].button
         if (cDiv.hidden){
             cDiv.hidden = false
+            rest.forEach(c => c.button.disabled = true)
+            plantCollectionButton.disabled = true
         }else{
             cDiv.hidden = true
+            plantCollectionButton.disabled = false
+            Collection.all.forEach(c => c.button.disabled = false)
         }
     }
 
