@@ -124,7 +124,6 @@ div.results {
  
   }
   
-        
 div.right-container{
     align-content: center;
     text-align: left;
@@ -138,10 +137,9 @@ div.right-container{
 }  
 
 div.collection-form-container{
-    align-content: center;
-    left: 0;
-    text-align: center;
-    top: 200px;
+    /* align-content: center; */
+    /* text-align: center; */
+    top: 100px;
     max-height: fit-content;
     width: fit-content; 
     bottom: 0;
@@ -149,6 +147,7 @@ div.collection-form-container{
 }  
 
 .form-control {
+  align-content: center;
   display: inline;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);

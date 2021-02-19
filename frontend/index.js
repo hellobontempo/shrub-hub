@@ -22,9 +22,9 @@ const plantGrid = document.getElementById("plant-grid")
 addPlantForm.addEventListener("submit", handleNewPlantSubmit)
 collectionForm.addEventListener("submit", handleSubmit)
 
-let addPlant = false //hide and seek with add plant form
+//hide and seek add plant form
+let addPlant = false 
 addPlantShowFormBtn.addEventListener("click", () => {
-    // hide & seek with the form
     addPlant = !addPlant;
     if (addPlant) {
       addPlantShowFormBtn.innerText = "Nevermind..."
@@ -39,8 +39,8 @@ addPlantShowFormBtn.addEventListener("click", () => {
     }
   });
 
-let showCollectionForm = false //hide and seek with create collection form
-
+//hide and seek create collection form
+let showCollectionForm = false 
 collectionBtn.addEventListener("click", () => {
   showCollectionForm = !showCollectionForm;
   if (showCollectionForm) {
@@ -52,8 +52,9 @@ collectionBtn.addEventListener("click", () => {
   }
 })
 
+//hide and seek collection buttons
 let displayPlants = false
-plantCollectionButton.addEventListener('click', () => { //hide and seek plant collection
+plantCollectionButton.addEventListener('click', () => { 
     displayPlants = !displayPlants;
     if (displayPlants) {
       collectionBtnDiv.hidden = false;
@@ -81,7 +82,7 @@ function handleNewPlantSubmit(e){
   e.preventDefault()
   plantApi.createPlant()
   e.target.reset()
-  
+  alert("Plant Successfully Created!")
   addPlantShowFormBtn.innerText = "Add a plant!";
   plantFormContainer.style.display = "none";
   plantCollectionButton.disabled = false
