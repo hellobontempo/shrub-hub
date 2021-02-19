@@ -70,7 +70,18 @@ button:active {
 	border-radius:8px;
 	display:inline;
 	cursor:pointer;
-	color:#050404;
+	color:#e7e5e7;
+	font-family:"Optima", sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+}
+
+label {
+	display:inline;
+	cursor:pointer;
+	color:#201d1d;
 	font-family:"Optima", sans-serif;
 	font-size:20px;
 	font-weight:bold;
@@ -125,9 +136,7 @@ div.collection-form-container{
   width: 80%;
   height: calc(1.5em + 0.75rem + 2px);
   font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 2.5;
-
+  line-height: 5;
 }
 
 img {
@@ -156,7 +165,7 @@ nav {
     display: grid;
     align-self: left;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0px;
+    gap: 10px;
     grid-auto-rows: minmax(200px, auto);
     
 }

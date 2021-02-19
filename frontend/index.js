@@ -61,12 +61,14 @@ function handleSubmit(e){
   e.preventDefault()
   collectionApi.createCollection()
   e.target.reset()
+  collectionFormContainer.hidden = true
 }
 
 function handleNewPlantSubmit(e){
   e.preventDefault()
   plantApi.createPlant()
   e.target.reset()
+  plantFormContainer.style.display = "none"
 }
 
 // plantApi.getPlants()
