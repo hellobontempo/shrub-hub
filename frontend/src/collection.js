@@ -22,7 +22,9 @@ class Collection {
     this.div = document.createElement('div')
     this.div.id = `collection-${this.id}`
     this.div.hidden = true
+
     collectionBtnDiv.appendChild(this.button)
+    
     Collection.container.appendChild(this.div).appendChild(this.grid)
     
     Collection.all.push(this)

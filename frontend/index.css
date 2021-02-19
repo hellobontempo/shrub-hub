@@ -128,8 +128,8 @@ div.right-container{
     align-content: center;
     text-align: left;
     top: 120px;
-    max-height: fit-content;
-    width: auto; 
+    max-height: auto;
+    width: fit-content; 
     left: 0; 
     bottom: 0;
     position:absolute;
@@ -148,6 +148,7 @@ div.collection-form-container{
 
 .form-control {
   align-content: center;
+  text-align: center;
   display: inline;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -202,7 +203,7 @@ p {
 }
 .wrapper {
     display: grid;
-    align-self: left;
+    text-align: center;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 6px;
     grid-row-gap:20px;
