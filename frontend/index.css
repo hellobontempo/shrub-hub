@@ -110,10 +110,11 @@ div.collection-form-container{
 
 .form-control {
   display: inline-block;
-  width: 80%;
+  width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
   font-size: 0.875rem;
   line-height: 5;
+  align-content: center;
 }
 
 
@@ -155,6 +156,7 @@ nav {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  float: right;
 }
 
 .tooltip {
