@@ -1,4 +1,3 @@
-
 class Collection {
 
     static all = []
@@ -42,7 +41,6 @@ class Collection {
         let c = Collection.all.filter(collection => collection.id === id,10)
         let rest = Collection.all.filter(collection => collection.id !== id,10)
         let cDiv = c[0].div
-        // let cButton = c[0].button
         if (cDiv.hidden){
             cDiv.hidden = false
             rest.forEach(c => c.button.disabled = true)

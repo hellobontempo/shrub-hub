@@ -12,7 +12,6 @@ const addPlantShowFormBtn = document.querySelector("#add-plant-form-btn");
 const plantFormContainer = document.querySelector("#create-a-plant-form")
 const addPlantForm = document.getElementById("add-plant-form")
 
-
 const collectionFormContainer = document.getElementById("collection-form-container")
 const collectionForm = document.getElementById("collection-form")
 
@@ -41,11 +40,17 @@ addPlantShowFormBtn.addEventListener("click", () => {
   });
 
 let showCollectionForm = false //hide and seek with create collection form
+
 collectionBtn.addEventListener("click", () => {
   showCollectionForm = !showCollectionForm;
-  showCollectionForm ? collectionFormContainer.hidden = false : collectionFormContainer.hidden = true
+  if (showCollectionForm) {
+    collectionFormContainer.hidden = false
+    collectionBtn.innerText = "Hide Form"
+  }else {
+    collectionFormContainer.hidden = true;
+    collectionBtn.innerText = "Make A Collection"
+  }
 })
-
 
 let displayPlants = false
 plantCollectionButton.addEventListener('click', () => { //hide and seek plant collection
