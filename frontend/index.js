@@ -29,13 +29,13 @@ addPlantShowFormBtn.addEventListener("click", () => {
     if (addPlant) {
       addPlantShowFormBtn.innerText = "Nevermind..."
       plantFormContainer.style.display = "block";
-      plantCollectionButton.disabled = true
-      collectionBtn.disabled = true
+      // plantCollectionButton.disabled = true
+      // collectionBtn.disabled = true
     } else {
       addPlantShowFormBtn.innerText = "Add a plant!";
       plantFormContainer.style.display = "none";
-      plantCollectionButton.disabled = false
-      collectionBtn.disabled = false
+      // plantCollectionButton.disabled = false
+      // collectionBtn.disabled = false
     }
   });
 

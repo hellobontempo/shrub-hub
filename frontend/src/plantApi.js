@@ -27,7 +27,9 @@ class PlantApi {
         fetch(this.baseUrl, configObj)
         .then (r => r.json())
         .then (json => { 
+            new Plant(json)
             const p = new Plant(json)
+
             p.renderPlant(plantGrid)
         })
     }
@@ -37,8 +39,9 @@ class PlantApi {
             .then(r => r.json())
                 .then(data => { 
                     data.forEach(element => {
+                        new Plant(element)
                         const p = new Plant(element)
-                        p.renderPlant(plantGrid)
+                        // p.renderPlant(plantGrid)
                     }
                 )
             }
@@ -51,7 +54,7 @@ class PlantApi {
                 .then(data => { 
                     data.forEach(element => {
                         const p = new Plant(element)
-                        p.renderPlantChecklist()
+                        // p.renderPlantChecklist()
                     }
                 )
             }

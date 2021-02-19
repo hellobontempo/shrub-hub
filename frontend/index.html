@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="index.css" />
+<link rel="stylesheet" href="game.css" />
 </head>
 
 <body>
@@ -16,10 +17,10 @@
     <div id="collection-buttons" hidden> </div>
  
   <div class="container" id="create-a-plant-form">
-    <!--<form id="plant-search-form">
+    <!-- <form id="plant-search-form">
       <input type="file" class="input" multiple />
       <button type="button" id="fetch-plants">get my shrub on</button>
-    </form>-->
+    </form> -->
     <form id="add-plant-form" class="form-control">
       <input type="text" name="plant-sci-name" id="plant-sci-name" placeholder="Scientific Name">
       <input type="text" name="plant-common-name" id="plant-common-name" placeholder="Common Names">
@@ -30,10 +31,11 @@
   </div>
   
  
-
+  <div id="game" class="body"></div>
 
   <div style="width: 100%">
     <div style="width: 50%; float:right"> 
+      
       <div class="collection-form-container" id="collection-form-container" hidden>
       <!-- collection form -->
         <form id="collection-form" class="form-control"><br>
@@ -53,15 +55,15 @@
         <!-- plant collections render here-->
       </div>
   </div>
-<script src="./src/api_key.js"></script>
+<!-- <script src="./src/api_key.js"></script> -->
 <script src="./src/plant.js"></script>
-<script src="./src/plantIdApi.js"></script>
+<!-- <script src="./src/plantIdApi.js"></script> -->
 <script src="./src/plantApi.js"></script>
 <script src="./src/collection.js"></script>
 <script src="./src/collectionApi.js"></script>
 <script src="./src/plant_collection.js"></script>
-
 <script src="./index.js"></script>
+<!-- <script src="./src/game.js"></script> -->
 </body>
 
 </html>
