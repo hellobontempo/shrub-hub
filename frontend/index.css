@@ -208,7 +208,12 @@ nav {
     display: grid;
     align-self: left;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-column-gap: 6px;
+    grid-row-gap:20px;
     grid-auto-rows: minmax(200px, auto);
-    
+}
+
+.box {
+  background: rgba(128, 128, 128, 0.377);
+  padding: 20px 20px 20px 20px;
 }

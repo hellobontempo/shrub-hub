@@ -11,15 +11,19 @@ class Plant {
       this.care = care
 
       this.element = document.createElement('div')
+      this.element.setAttribute("class", "box")
       this.element.id = `plant-${this.id}`
-      this.element.innerHTML = `<img src="${this.img_src}" alt="${this.sci_name}"><br>`
+      this.element.innerHTML = `<h3>${this.sci_name}</h3>
+                                <img src="${this.img_src}" alt="${this.sci_name}"><br>
+                                ${this.common_name}`
+              
       this.element.addEventListener('click', this.displayInfo)
   
 
-      this.info = document.createElement('div')
-      this.info.id = `plant-${this.id}`
-      this.info.innerHTML = `<h1>${this.name}</h1>`
-      this.info.hidden = true
+      // this.info = document.createElement('div')
+      // this.info.id = `plant-${this.id}`
+      // this.info.innerHTML = `<h1>${this.name}</h1>`
+      // this.info.hidden = true
 
       Plant.all.push(this)
   }
