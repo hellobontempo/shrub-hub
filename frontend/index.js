@@ -6,7 +6,7 @@ const collectionApi = new CollectionApi(port)
 //navigation buttons: 
 const navBar = document.getElementById("nav-bar")
 const plantCollectionButton = document.getElementById("plant-collection-btn")
-const collectionBtn = document.getElementById("make-collection-button")
+const makeCollectionBtn = document.getElementById("make-collection-button")
 const addPlantShowFormBtn = document.querySelector("#add-plant-form-btn")
 const showMemoryGameBtn = document.getElementById("show-game-btn")
 
@@ -33,25 +33,25 @@ addPlantShowFormBtn.addEventListener("click", () => {
     if (addPlant) {
       addPlantShowFormBtn.innerText = "nevermind..."
       plantFormContainer.style.display = "block";
-      [collectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [true, true, true];
+      [makeCollectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [true, true, true];
     } else {
       addPlantShowFormBtn.innerText = "add a plant";
       plantFormContainer.style.display = "none";
-      [collectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false]
+      [makeCollectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false]
     }
   });
 
 //hide and seek create collection form
 let showCollectionForm = false 
-collectionBtn.addEventListener("click", () => {
+makeCollectionBtn.addEventListener("click", () => {
   showCollectionForm = !showCollectionForm;
   if (showCollectionForm) {
     collectionFormContainer.hidden = false;
     [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [true, true, true];
-    collectionBtn.innerText = "hide form"
+    makeCollectionBtn.innerText = "hide form"
   }else {
     collectionFormContainer.hidden = true ;
-    collectionBtn.innerText = "make a collection";
+    makeCollectionBtn.innerText = "make a collection";
     [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false];
   }
 })
@@ -62,11 +62,11 @@ plantCollectionButton.addEventListener('click', () => {
     displayPlants = !displayPlants;
     if (displayPlants) {
       collectionBtnDiv.hidden = false;
-      [addPlantShowFormBtn.disabled, collectionBtn.disabled, showMemoryGameBtn.disabled] = [true, true, true] ;
+      [addPlantShowFormBtn.disabled, makeCollectionBtn.disabled, showMemoryGameBtn.disabled] = [true, true, true] ;
       plantCollectionButton.innerText = "hide collections"
     } else {
       collectionBtnDiv.hidden = true;
-      [addPlantShowFormBtn.disabled, collectionBtn.disabled, showMemoryGameBtn.disabled] = [false, false, false];
+      [addPlantShowFormBtn.disabled, makeCollectionBtn.disabled, showMemoryGameBtn.disabled] = [false, false, false];
       plantCollectionButton.innerText = "view plant collections"
     }
   });
@@ -76,11 +76,11 @@ showMemoryGameBtn.addEventListener('click', () => {
     displayPlants = !displayPlants;
     if (displayPlants) {
       gameDiv.hidden = false;
-      [addPlantShowFormBtn.disabled, collectionBtn.disabled, plantCollectionButton.disabled] = [true, true, true];
+      [addPlantShowFormBtn.disabled, makeCollectionBtn.disabled, plantCollectionButton.disabled] = [true, true, true];
       showMemoryGameBtn.innerText = "hide game";
     } else {
       gameDiv.hidden = true;
-      [addPlantShowFormBtn.disabled, collectionBtn.disabled, plantCollectionButton.disabled] = [false, false, false];
+      [addPlantShowFormBtn.disabled, makeCollectionBtn.disabled, plantCollectionButton.disabled] = [false, false, false];
       showMemoryGameBtn.innerText = "play memory game"
     }
   });
@@ -88,10 +88,13 @@ showMemoryGameBtn.addEventListener('click', () => {
 
 
 function handleSubmit(e){
-  e.preventDefault()
-  collectionApi.createCollection()
-  e.target.reset()
-  collectionFormContainer.hidden = true
+  e.preventDefault();
+  collectionApi.createCollection();
+  e.target.reset();
+  alert("Collection Successfully Created!");
+  makeCollectionBtn.innerText = "make a collection";
+  collectionFormContainer.hidden = true;
+  [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false]
 }
 
 function handleNewPlantSubmit(e){
@@ -101,7 +104,7 @@ function handleNewPlantSubmit(e){
   alert("Plant Successfully Created!")
   addPlantShowFormBtn.innerText = "add a plant";
   plantFormContainer.style.display = "none";
-  [collectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false]
+  [makeCollectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false]
 }
 
 plantApi.getCheckListPlants()
