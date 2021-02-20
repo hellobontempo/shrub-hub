@@ -1,9 +1,8 @@
-plantApi.getPlants(8) //makes plant cards for game
-const gameGridDiv= document.getElementById("game-grid")
 
 let hasFlippedCard = false;
 let firstCard, secondCard;
-   
+let lockBoard = false
+
 class PlantCard {
 
     static all = []
@@ -19,9 +18,8 @@ class PlantCard {
         this.card.innerHTML = `<img class="front-face" src="${this.img_src}" alt="${this.common_name}">
                                <img class="back-face" src="./icons/yellow-sun-icon-vector-12597592.png" alt="Sun Icon">`
 
-        this.card.addEventListener('click', (e)=> this.displayCard(e, this.card))
+        this.card.addEventListener('click', (e)=> this.flipCard(e, this.card))
         PlantCard.all.push(this)
-        // gameGridDiv.appendChild(this.card)
     }
 
     static appendCards(){
@@ -41,12 +39,13 @@ class PlantCard {
           array[currentIndex] = array[randomIndex];
           array[randomIndex] = temporaryValue;
         }
+     
         return array;
       }
 
-    displayCard (){
-         // this.card.classList.toggle('flip')
-   
+    flipCard (){
+        if (lockBoard) return;
+
         this.card.classList.add('flip');
         if (!hasFlippedCard) {
             hasFlippedCard = true;
@@ -61,25 +60,27 @@ class PlantCard {
     }
 
     checkForMatch(){
+      
         if (firstCard.id === secondCard.id){
             this.disableCards()
             return
         }
         this.unflipCards()
+        lockBoard = true
     }
 
     disableCards (){
-        firstCard.card.removeEventListener('click', this.displayCard)
-        secondCard.card.removeEventListener('click', this.displayCard)
+        firstCard.card.removeEventListener('click', this.flipCard)
+        secondCard.card.removeEventListener('click', this.flipCard)
     }
 
     unflipCards(){
         setTimeout( () => {
             firstCard.card.classList.remove('flip')
             secondCard.card.classList.remove('flip')
-        }, 1500)
+            lockBoard = false
+        }, 700)
+
     }
-
-
 
 }

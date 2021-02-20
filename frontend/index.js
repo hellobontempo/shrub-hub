@@ -113,3 +113,6 @@ function handleNewPlantSubmit(e){
 plantApi.getCheckListPlants()
 collectionApi.getCollections()
 
+plantApi.getPlants(8) //makes plant cards for game
+const gameGridDiv= document.getElementById("game-grid")
+
