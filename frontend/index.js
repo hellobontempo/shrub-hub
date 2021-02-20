@@ -31,7 +31,7 @@ let addPlant = false
 addPlantShowFormBtn.addEventListener("click", () => {
     addPlant = !addPlant;
     if (addPlant) {
-      addPlantShowFormBtn.innerText = "nevermind..."
+      addPlantShowFormBtn.innerText = "nevermind...";
       plantFormContainer.style.display = "block";
       [makeCollectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [true, true, true];
     } else {
@@ -48,7 +48,7 @@ makeCollectionBtn.addEventListener("click", () => {
   if (showCollectionForm) {
     collectionFormContainer.hidden = false;
     [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [true, true, true];
-    makeCollectionBtn.innerText = "hide form"
+    makeCollectionBtn.innerText = "hide form";
   }else {
     collectionFormContainer.hidden = true ;
     makeCollectionBtn.innerText = "make a collection";
