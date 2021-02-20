@@ -97,11 +97,6 @@ Plant.create([
     common_name: "Golden Pothos",
     img_src: "https://www.almanac.com/sites/default/files/image_nodes/pothos_usmee_ss-crop.jpg"
     },
-    {sci_name: "Dionaea muscipula",
-    care: "Regardless of the propagation method used, the plants will live for 20 to 30 years if cultivated in the right conditions. Place in bright indirect sunlight indoors. Keep planting mix very moist at all times; Using distilled water is best. To fertilize it, just feed it insects! If that’s too icky a very mild amount of fertilizer applied directly to the traps will suffice.",
-    common_name: "Venus Fly Trap",
-    img_src: "http://cdn.shopify.com/s/files/1/0038/9405/0868/products/Houseplants_VenusFlytrap_1024x1024.jpg?v=1593291790"
-    }
 ])
 Collection.create([
     {name: "Succulents", user: "Claire", plants: tropics},
