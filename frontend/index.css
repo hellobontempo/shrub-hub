@@ -163,17 +163,6 @@ img {
 	text-decoration:none;
 }
 
-/* label {
-	display:inline;
-	cursor:pointer;
-	color:#201d1d;
-	font-family:"Geneva", sans-serif;
-	font-size:20px;
-	font-weight:bold;
-	padding:13px 32px;
-	text-decoration:none;
-} */
-
 nav {
   display: -ms-flexbox;
   display: flex;
@@ -213,6 +202,7 @@ div.game {
   width: 700px;
   height: 600px;
   perspective: 1000px
+
 }
 
 .front-face,
@@ -232,15 +222,18 @@ div.game {
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
   grid-auto-rows: minmax(150px, auto);
+  background-color:  rgb(255, 225, 210) ;
+  border: rgb(255, 225, 210);
+  border-right: 100px;
 }
 
 .card {
   width: auto;
   /* height: calc(33.333% - 10px); */
-  margin: 20px;
+  margin: 10px;
   position: relative;
   transform-style: preserve-3d;
   transform: scale(1);
