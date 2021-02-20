@@ -63,7 +63,7 @@ button:active {
 }
 
 button:disabled {
-  opacity: 80%;
+  opacity: 0%;
 	background-color:#E1A370;
 	border-radius:8px;
 	display:inline-block;
