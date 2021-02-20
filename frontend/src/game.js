@@ -2,6 +2,7 @@
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false
+let counter = 0
 
 class PlantCard {
 
@@ -45,6 +46,7 @@ class PlantCard {
 
     flipCard (){
         if (lockBoard) return;
+        if (this === firstCard) return;
 
         this.card.classList.add('flip');
         if (!hasFlippedCard) {
@@ -55,12 +57,12 @@ class PlantCard {
 
         secondCard = this
         hasFlippedCard = false
+    
 
         this.checkForMatch()
     }
 
     checkForMatch(){
-      
         if (firstCard.id === secondCard.id){
             this.disableCards()
             return
@@ -75,6 +77,7 @@ class PlantCard {
     }
 
     unflipCards(){
+    console.log(counter)
         setTimeout( () => {
             firstCard.card.classList.remove('flip')
             secondCard.card.classList.remove('flip')
@@ -83,4 +86,5 @@ class PlantCard {
 
     }
 
+    
 }
