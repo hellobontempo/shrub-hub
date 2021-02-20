@@ -4,12 +4,11 @@ body, html {
   color: rgb(20, 18, 18);
   line-height: 1.8;
   background: url('images/plants.png');
-  /* background: url('images/shrub-hub-logo.png'); */
   background-color: rgb(255, 225, 210);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto; 
-  background-size: 70%;
+  /* background-size: auto;  */
+  background-size: 80%;
 }
 
 .activated {
@@ -78,16 +77,15 @@ button:disabled {
 }
 
 .button {
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	background-color:#D7B656;
+	background-color:#E1A370;
 	border-radius:8px;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-family: "Geneva", sans-serif;
-	font-size: 20px;
-	font-weight:bold;
-	padding:13px 20px;
+	color:#363535;
+	font-family: 'Geneva', sans-serif;
+	font-size: 15px;
+	font-weight: normal;
+	padding: 20px;
 	text-decoration:none;
 }
 
@@ -130,10 +128,10 @@ div.collection-form-container{
     align-content: left;
     text-align: center;
     /* top: 200px; */
-    padding: 10%;
+    padding: 14%;
     width: fit-content; 
     bottom: 0;
-    background-color:rgb(255, 255, 255)
+    background-color:rgb(255, 225, 210);
 }  
 
 .form-control {
@@ -154,14 +152,13 @@ img {
 }
 
 .input {
-	background-color:#9c989e;
-	border-radius:8px;
+	background-color:#fcfbfd;
+	/* border-radius:8px; */
 	display:inline;
 	cursor:pointer;
 	color:#e7e5e7;
 	font-family:"Geneva", sans-serif;
 	font-size:20px;
-	font-weight:bold;
 	padding:13px 32px;
 	text-decoration:none;
 }
