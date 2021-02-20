@@ -20,9 +20,6 @@ class Plant {
 
       this.element.addEventListener('mouseover', (e) => this.displayCare(e, this.element))
       this.element.addEventListener('mouseout', (e) => this.displayPhoto(e, this.element))
-      this.checkboxDiv = document.createElement('div')
-      this.checkboxDiv.id = `checkbox-${this.id}`
-      this.element.appendChild(this.checkboxDiv)
 
       Plant.all.push(this)
   }
@@ -46,7 +43,7 @@ class Plant {
   }
 
   renderPlantChecklist(){
-    this.checkboxDiv.innerHTML += `<input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}">`
+    this.element.innerHTML += `<input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}">`
     checkBoxPlantDiv.appendChild(this.element)
   }
 

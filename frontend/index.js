@@ -81,7 +81,7 @@ showMemoryGameBtn.addEventListener('click', () => {
     } else {
       gameDiv.hidden = true;
       [addPlantShowFormBtn.disabled, makeCollectionBtn.disabled, plantCollectionButton.disabled] = [false, false, false];
-      showMemoryGameBtn.innerText = "play memory game"
+      showMemoryGameBtn.innerText = "memory game"
     }
   });
 

@@ -1,7 +1,7 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Geneva", sans-serif;}
 body, html {
   height: 100%;
-  color: rgb(20, 18, 18);
+  /* color: rgb(20, 18, 18); */
   line-height: 1.8;
   background: url('images/plants.png');
   background-color: rgb(255, 225, 210);
@@ -12,45 +12,18 @@ body, html {
 }
 
 .activated {
-  background-color: #614d74;
+  background-color: #efe9f5;
   border-radius: 0px 5px 5px 0px;
   border: 1px solid;
 }
-
-.alert {
-  position: relative;
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-}
-
-.alert-dismissible {
-  padding-right: 3.8125rem;
-}
-
-.alert-dismissible .close {
-  top: 0;
-  right: 0;
-  z-index: 2;
-  padding: 0.75rem 1.25rem;
-  color: inherit;
-}
-
-.alert-primary {
-  color: #1a3047;
-  background-color: #d6dfe7;
-  border-color: #c6d2de;
-}
-
 
   
 button {
 	background-color:#E1A370;
 	border-radius:8px;
+  border-color: #E1A370;
 	display:inline-block;
 	cursor:pointer;
-	color:#363535;
 	font-family: 'Geneva', sans-serif;
 	font-size: 15px;
 	font-weight: normal;
@@ -60,6 +33,7 @@ button {
 
 button:active {
   background-color:#6B954F;
+  border-color: #6B954F;
 }
 
 button:disabled {
@@ -79,9 +53,9 @@ button:disabled {
 .button {
 	background-color:#E1A370;
 	border-radius:8px;
+  border-color: #E1A370;
 	display:inline-block;
 	cursor:pointer;
-	color:#363535;
 	font-family: 'Geneva', sans-serif;
 	font-size: 15px;
 	font-weight: normal;
@@ -91,6 +65,7 @@ button:disabled {
 
 button:hover {
 	background-color:#6B954F;
+  border-color: #6B954F;
 }
 
 
