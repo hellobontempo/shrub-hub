@@ -30,12 +30,12 @@ let addPlant = false
 addPlantShowFormBtn.addEventListener("click", () => {
     addPlant = !addPlant;
     if (addPlant) {
-      addPlantShowFormBtn.innerText = "Nevermind..."
+      addPlantShowFormBtn.innerText = "nevermind..."
       plantFormContainer.style.display = "block";
       plantCollectionButton.disabled = true
       collectionBtn.disabled = true
     } else {
-      addPlantShowFormBtn.innerText = "Add a plant!";
+      addPlantShowFormBtn.innerText = "add a plant";
       plantFormContainer.style.display = "none";
       plantCollectionButton.disabled = false
       collectionBtn.disabled = false
@@ -48,10 +48,10 @@ collectionBtn.addEventListener("click", () => {
   showCollectionForm = !showCollectionForm;
   if (showCollectionForm) {
     collectionFormContainer.hidden = false
-    collectionBtn.innerText = "Hide Form"
+    collectionBtn.innerText = "hide form"
   }else {
-    collectionFormContainer.hidden = true;
-    collectionBtn.innerText = "Make A Collection"
+    collectionFormContainer.hidden = true ;
+    collectionBtn.innerText = "make a collection"
   }
 })
 
@@ -63,12 +63,12 @@ plantCollectionButton.addEventListener('click', () => {
       collectionBtnDiv.hidden = false;
       addPlantShowFormBtn.disabled = true
       collectionBtn.disabled = true
-      plantCollectionButton.innerText = "Hide Collections"
+      plantCollectionButton.innerText = "hide collections"
     } else {
       collectionBtnDiv.hidden = true;
       addPlantShowFormBtn.disabled = false
       collectionBtn.disabled = false
-      plantCollectionButton.innerText = "View Collections"
+      plantCollectionButton.innerText = "view plant collections"
     }
   });
 
@@ -80,13 +80,13 @@ showMemoryGameBtn.addEventListener('click', () => {
       addPlantShowFormBtn.disabled = true
       collectionBtn.disabled = true
       plantCollectionButton.disabled = true
-      showMemoryGameBtn.innerText = "Hide Game"
+      showMemoryGameBtn.innerText = "hide game"
     } else {
       gameDiv.hidden = true;
       addPlantShowFormBtn.disabled = false
       collectionBtn.disabled = false
       plantCollectionButton.disabled = false
-      showMemoryGameBtn.innerText = "Play Memory Game"
+      showMemoryGameBtn.innerText = "play memory game"
     }
   });
 
@@ -104,7 +104,7 @@ function handleNewPlantSubmit(e){
   plantApi.createPlant()
   e.target.reset()
   alert("Plant Successfully Created!")
-  addPlantShowFormBtn.innerText = "Add a plant!";
+  addPlantShowFormBtn.innerText = "add a plant";
   plantFormContainer.style.display = "none";
   plantCollectionButton.disabled = false
   collectionBtn.disabled = false
