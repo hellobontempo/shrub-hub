@@ -27,6 +27,10 @@ class PlantCard {
         this.shuffle().forEach(card => gameGridDiv.appendChild(card.card) )  
     }
     
+    static removeCards(){    
+        this.all.forEach(element => element.card.remove() )  
+    }
+    
     static shuffle() {
         let array = this.all
         let currentIndex = array.length, temporaryValue, randomIndex;
@@ -63,6 +67,7 @@ class PlantCard {
     }
 
     checkForMatch(){
+    counter++
         if (firstCard.id === secondCard.id){
             this.disableCards()
             return
@@ -74,10 +79,10 @@ class PlantCard {
     disableCards (){
         firstCard.card.removeEventListener('click', this.flipCard)
         secondCard.card.removeEventListener('click', this.flipCard)
+        PlantCard.test()
     }
 
     unflipCards(){
-    console.log(counter)
         setTimeout( () => {
             firstCard.card.classList.remove('flip')
             secondCard.card.classList.remove('flip')
@@ -85,6 +90,32 @@ class PlantCard {
         }, 700)
 
     }
+    
+    static test = () => {
+    let flippedCards = document.getElementsByClassName("card flip")
+        if (flippedCards.length === PlantCard.all.length){
+            setTimeout( () => {
+            alert(`well done! it only took you ${counter} moves`)
+            },1000)
+            setTimeout( () => {
+            this.all.forEach(element =>(element.card.classList.remove('flip')))
+            PlantCard.removeCards()
+            let btn = document.createElement("button")
+            btn.innerText = "Play Again!"
+            btn.addEventListener('click', PlantCard.startNewGame)
+            scoreDiv.appendChild(btn)
+            },2000)
+            
+        }
+    }
 
+    static startNewGame() {
+        hasFlippedCard = false;
+        firstCard, secondCard;
+        lockBoard = false
+        counter = 0
+        PlantCard.appendCards()
+        this.remove()
+    }
     
 }

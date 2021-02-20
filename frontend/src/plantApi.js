@@ -32,19 +32,7 @@ class PlantApi {
             p.renderPlant(checkBoxPlantDiv)
         })
     }
-
-    // getPlants() {
-    //     fetch(this.baseUrl)
-    //         .then(r => r.json())
-    //             .then(data => { 
-    //                 debugger
-    //                 data.forEach(element => {
-    //                     const p = new PlantCard(element)
-    //                 })
-    //         })
-                      
-    // }
-
+    
     getPlants(num) {
         fetch(this.baseUrl)
             .then(r => r.json())

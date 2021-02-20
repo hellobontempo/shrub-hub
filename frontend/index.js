@@ -20,7 +20,8 @@ const checkBoxPlantDiv = document.getElementById("checkbox-plant-list")
 const collectionBtnDiv = document.getElementById("collection-buttons")
 const plantGrid = document.getElementById("plant-grid")
 const gameDiv = document.getElementById("game")
-
+const gameGridDiv= document.getElementById("game-grid")
+const scoreDiv= document.getElementById("score")
 
 addPlantForm.addEventListener("submit", handleNewPlantSubmit)
 collectionForm.addEventListener("submit", handleSubmit)
@@ -108,5 +109,5 @@ plantApi.getCheckListPlants()
 collectionApi.getCollections()
 
 plantApi.getPlants(8) //makes plant cards for game
-const gameGridDiv= document.getElementById("game-grid")
+
 

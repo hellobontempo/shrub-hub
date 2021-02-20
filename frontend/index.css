@@ -182,8 +182,8 @@ p {
     text-align: center;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 6px;
-    grid-row-gap:20px;
-    grid-auto-rows: minmax(200px, auto);
+    grid-row-gap:6px;
+    grid-auto-rows: minmax(100px, auto);
 }
 
 .box {
