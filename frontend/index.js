@@ -32,13 +32,11 @@ addPlantShowFormBtn.addEventListener("click", () => {
     if (addPlant) {
       addPlantShowFormBtn.innerText = "nevermind..."
       plantFormContainer.style.display = "block";
-      plantCollectionButton.disabled = true
-      collectionBtn.disabled = true
+      [collectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [true, true, true];
     } else {
       addPlantShowFormBtn.innerText = "add a plant";
       plantFormContainer.style.display = "none";
-      plantCollectionButton.disabled = false
-      collectionBtn.disabled = false
+      [collectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false]
     }
   });
 
@@ -47,11 +45,13 @@ let showCollectionForm = false
 collectionBtn.addEventListener("click", () => {
   showCollectionForm = !showCollectionForm;
   if (showCollectionForm) {
-    collectionFormContainer.hidden = false
+    collectionFormContainer.hidden = false;
+    [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [true, true, true];
     collectionBtn.innerText = "hide form"
   }else {
     collectionFormContainer.hidden = true ;
-    collectionBtn.innerText = "make a collection"
+    collectionBtn.innerText = "make a collection";
+    [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false];
   }
 })
 
@@ -61,13 +61,11 @@ plantCollectionButton.addEventListener('click', () => {
     displayPlants = !displayPlants;
     if (displayPlants) {
       collectionBtnDiv.hidden = false;
-      addPlantShowFormBtn.disabled = true
-      collectionBtn.disabled = true
+      [addPlantShowFormBtn.disabled, collectionBtn.disabled, showMemoryGameBtn.disabled] = [true, true, true] ;
       plantCollectionButton.innerText = "hide collections"
     } else {
       collectionBtnDiv.hidden = true;
-      addPlantShowFormBtn.disabled = false
-      collectionBtn.disabled = false
+      [addPlantShowFormBtn.disabled, collectionBtn.disabled, showMemoryGameBtn.disabled] = [false, false, false];
       plantCollectionButton.innerText = "view plant collections"
     }
   });
@@ -77,15 +75,11 @@ showMemoryGameBtn.addEventListener('click', () => {
     displayPlants = !displayPlants;
     if (displayPlants) {
       gameDiv.hidden = false;
-      addPlantShowFormBtn.disabled = true
-      collectionBtn.disabled = true
-      plantCollectionButton.disabled = true
-      showMemoryGameBtn.innerText = "hide game"
+      [addPlantShowFormBtn.disabled, collectionBtn.disabled, plantCollectionButton.disabled] = [true, true, true];
+      showMemoryGameBtn.innerText = "hide game";
     } else {
       gameDiv.hidden = true;
-      addPlantShowFormBtn.disabled = false
-      collectionBtn.disabled = false
-      plantCollectionButton.disabled = false
+      [addPlantShowFormBtn.disabled, collectionBtn.disabled, plantCollectionButton.disabled] = [false, false, false];
       showMemoryGameBtn.innerText = "play memory game"
     }
   });
