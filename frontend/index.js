@@ -101,8 +101,7 @@ function handleNewPlantSubmit(e){
   alert("Plant Successfully Created!")
   addPlantShowFormBtn.innerText = "add a plant";
   plantFormContainer.style.display = "none";
-  plantCollectionButton.disabled = false
-  collectionBtn.disabled = false
+  [collectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false]
 }
 
 plantApi.getCheckListPlants()
