@@ -48,7 +48,8 @@ class PlantCard {
         return array;
       }
 
-    flipCard (){
+
+    flipCard (){ //make arrow function?
         if (lockBoard) return;
         if (this === firstCard) return;
 

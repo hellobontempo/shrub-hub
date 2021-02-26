@@ -31,10 +31,11 @@ class Collection {
     }
 
     renderCollection(){   
-        let plants = this.plants.map(plant => new Plant(plant))
-        for (const plant of plants){
-            plant.renderPlant(this.grid)
-        }
+        console.log(this.plants)
+        // let plants = this.plants.map(plant => new Plant(plant)) //find plants from json 
+        // for (const plant of plants){ 
+        //     plant.renderPlant(this.grid)
+        // }
     }
 
 

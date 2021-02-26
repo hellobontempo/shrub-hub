@@ -53,7 +53,8 @@ class PlantApi {
                 .then(data => { 
                     data.forEach(element => {
                         const p = new Plant(element)
-                        p.renderPlantChecklist()
+                        p.makePlantChecklist()
+                        p.appendChecklist()
                     }
                 )
             }

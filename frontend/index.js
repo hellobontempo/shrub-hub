@@ -9,6 +9,8 @@ const plantCollectionButton = document.getElementById("plant-collection-btn")
 const makeCollectionBtn = document.getElementById("make-collection-button")
 const addPlantShowFormBtn = document.querySelector("#add-plant-form-btn")
 const showMemoryGameBtn = document.getElementById("show-game-btn")
+const sortPlantsAtoZBtn = document.getElementById("sort-plants-a-z-btn")
+
 
 const plantFormContainer = document.querySelector("#create-a-plant-form")
 const addPlantForm = document.getElementById("add-plant-form")
@@ -25,6 +27,7 @@ const scoreDiv= document.getElementById("score")
 
 addPlantForm.addEventListener("submit", handleNewPlantSubmit)
 collectionForm.addEventListener("submit", handleSubmit)
+sortPlantsAtoZBtn.addEventListener('click', sortPlantsAlpha)
 
 //hide and seek add plant form
 let addPlant = false 
@@ -86,7 +89,6 @@ showMemoryGameBtn.addEventListener('click', () => {
   });
 
 
-
 function handleSubmit(e){
   e.preventDefault();
   collectionApi.createCollection();
@@ -105,6 +107,23 @@ function handleNewPlantSubmit(e){
   addPlantShowFormBtn.innerText = "add a plant";
   plantFormContainer.style.display = "none";
   [makeCollectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false]
+}
+
+function sortPlantsAlpha(){
+  let sortedPlants = Plant.all.slice(0, 17)
+  sortedPlants = sortedPlants.sort(function(a, b) {
+    let nameA = a.sci_name.toUpperCase(); // ignore upper and lowercase
+    let nameB = b.sci_name.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  });
+  checkBoxPlantDiv.innerHTML = ""
+  sortedPlants.forEach(plant => plant.appendChecklist())
 }
 
 plantApi.getCheckListPlants()
