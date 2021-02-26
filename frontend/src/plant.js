@@ -59,14 +59,12 @@ class Plant {
   }
 
   makePlantCheckBox(){
-    this.element.innerHTML += `<input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}">` 
-    console.log(`check box ${this.element.id}`)
+    this.element.innerHTML += `<input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}">`
   }
 
 
   appendChecklist (){
     checkBoxPlantDiv.appendChild(this.element)
-    console.log(this.element)
   }
   
   // appendAndMakeCheckList(){
