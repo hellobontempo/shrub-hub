@@ -29,8 +29,8 @@ class PlantApi {
         .then (json => { 
             new Plant(json)
             const p = new Plant(json)
-            // p.renderPlant(checkBoxPlantDiv)
-            p.renderPlantChecklist()
+            p.makePlantChecklist()
+            p.appendChecklist()
         })
     }
     

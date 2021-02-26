@@ -31,17 +31,17 @@ class Collection {
     }
 
     renderCollection(){   
-        console.log(this.plants)
-        // let plants = this.plants.map(plant => new Plant(plant)) //find plants from json 
-        // for (const plant of plants){ 
-        //     plant.renderPlant(this.grid)
-        // }
+        for (const collectionPlant of this.plants){ 
+            let p = Plant.all.find(element => element.id === collectionPlant.id)
+            p.renderPlant(this.grid)
+        }
     }
 
 
-    showCollection (event){
+    showCollection (event){ 
         let id = parseInt(`${event.target.id}`)
         let c = Collection.all.filter(collection => collection.id === id,10)
+        console.log(c)
         let rest = Collection.all.filter(collection => collection.id !== id,10)
         let cDiv = c[0].div
         if (cDiv.hidden){

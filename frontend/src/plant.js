@@ -42,12 +42,12 @@ class Plant {
     p.hidden = true
   }
 
-  makePlantChecklist = () => {
+  makePlantChecklist(){
     this.element.innerHTML += `<input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}">` //separate into 2 different functions
   }
 
 
-  appendChecklist = () => {
+  appendChecklist (){
     checkBoxPlantDiv.appendChild(this.element)
   }
   
