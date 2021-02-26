@@ -18,8 +18,8 @@ class Plant {
                                 <h4>${this.common_name}</h4>
                                 <p id="plant-${this.id}" hidden>${this.care}</p>`
 
-      this.element.addEventListener('mouseover', (e) => this.displayCare(e, this.element))
-      this.element.addEventListener('mouseout', (e) => this.displayPhoto(e, this.element))
+      this.element.addEventListener('mouseover', (e) => this.displayCare(this.element))
+      this.element.addEventListener('mouseout', (e) => this.displayPhoto(this.element))
 
       Plant.all.push(this)
   }
@@ -38,6 +38,7 @@ class Plant {
     });
     checkBoxPlantDiv.innerHTML = ""
     sortedPlants.forEach(plant => plant.appendChecklist())
+    sortPlantsAtoZBtn.innerHTML = "alphabetized!"
   }
 
   renderPlant(htmlElement){

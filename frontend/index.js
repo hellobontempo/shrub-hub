@@ -55,7 +55,6 @@ makeCollectionBtn.addEventListener("click", () => {
     makeCollectionBtn.innerText = "hide form";
   }else {
     collectionFormContainer.hidden = true ;
-    checkBoxPlantDiv.innerHTML = "";
     makeCollectionBtn.innerText = "make a collection";
     [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false];
   }

@@ -45,6 +45,6 @@ class CollectionApi{
         .then (r => r.json())
             .then (json => {
                 const c = new Collection(json)
-                c.renderCollection()
+                // c.renderCollection()
             })
 }}
