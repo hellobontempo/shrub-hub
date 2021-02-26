@@ -24,6 +24,22 @@ class Plant {
       Plant.all.push(this)
   }
 
+  static sortPlantsAlpha(){
+    let sortedPlants = Plant.all.sort(function(a, b) {
+      let nameA = a.sci_name.toUpperCase(); // ignore upper and lowercase
+      let nameB = b.sci_name.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
+    checkBoxPlantDiv.innerHTML = ""
+    sortedPlants.forEach(plant => plant.appendChecklist())
+  }
+
   renderPlant(htmlElement){
     htmlElement.appendChild(this.element)
   }
@@ -42,15 +58,21 @@ class Plant {
     p.hidden = true
   }
 
-  makePlantChecklist(){
-    this.element.innerHTML += `<input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}">` //separate into 2 different functions
+  makePlantCheckBox(){
+    this.element.innerHTML += `<input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}">` 
+    console.log(`check box ${this.element.id}`)
   }
 
 
   appendChecklist (){
     checkBoxPlantDiv.appendChild(this.element)
+    console.log(this.element)
   }
   
+  // appendAndMakeCheckList(){
+  //   this.element.innerHTML += `<input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}">` 
+  //   checkBoxPlantDiv.appendChild(this.element)
+  // }
 
 
 }

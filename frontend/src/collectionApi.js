@@ -48,8 +48,3 @@ class CollectionApi{
                 c.renderCollection()
             })
 }}
-
-// CollectionApi.prototype = {
-//     createCollection,
-//     getCollections
-// }

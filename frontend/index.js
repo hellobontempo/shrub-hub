@@ -27,7 +27,7 @@ const scoreDiv= document.getElementById("score")
 
 addPlantForm.addEventListener("submit", handleNewPlantSubmit)
 collectionForm.addEventListener("submit", handleSubmit)
-sortPlantsAtoZBtn.addEventListener('click', sortPlantsAlpha)
+sortPlantsAtoZBtn.addEventListener('click', Plant.sortPlantsAlpha)
 
 //hide and seek add plant form
 let addPlant = false 
@@ -47,6 +47,7 @@ addPlantShowFormBtn.addEventListener("click", () => {
 //hide and seek create collection form
 let showCollectionForm = false 
 makeCollectionBtn.addEventListener("click", () => {
+
   showCollectionForm = !showCollectionForm;
   if (showCollectionForm) {
     collectionFormContainer.hidden = false;
@@ -109,26 +110,12 @@ function handleNewPlantSubmit(e){
   [makeCollectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false]
 }
 
-function sortPlantsAlpha(){
-  let sortedPlants = Plant.all.slice(0, 17)
-  sortedPlants = sortedPlants.sort(function(a, b) {
-    let nameA = a.sci_name.toUpperCase(); // ignore upper and lowercase
-    let nameB = b.sci_name.toUpperCase(); // ignore upper and lowercase
-    if (nameA < nameB) {
-      return -1;
-    }
-    if (nameA > nameB) {
-      return 1;
-    }
-    return 0;
-  });
-  checkBoxPlantDiv.innerHTML = ""
-  sortedPlants.forEach(plant => plant.appendChecklist())
-}
 
 plantApi.getCheckListPlants()
-collectionApi.getCollections()
+collectionApi.getCollections() 
+plantApi.getPlants(8)  //makes 16 plant cards for game
 
-plantApi.getPlants(8) //makes plant cards for game
+
+
 
 

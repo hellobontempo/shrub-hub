@@ -35,6 +35,11 @@ tropics = Plant.create([
 ])
 
 easy = Plant.create([   
+    {sci_name: "Sansevieria",
+    care: "Can handle low or bright light. Let soil dry completely between waterings or roots will rot.",
+    common_name: "Snake Plant",
+    img_src: "https://cdn.shopify.com/s/files/1/0013/3529/6118/products/Nursery-Pot-4_Sansevieria-Zeylanica-4.jpg?v=1544499843"
+    },
     {sci_name: "Monstera deliciosa",
     care: "Because of its origin in the tropical rainforests of Central and South America, the Swiss cheese plant is best suited to indoor growth in North America, as it cannot withstand temperatures below 55 degrees Fahrenheit. When planting a Monstera, select a deep pot with good drainage, and a peaty potting soil. Fill the bottom third of the pot with soil, and establish a stake in the pot as these plants are climbers. Cover the roots with soil and use plant ties to secure the stem to the stake. Place in a location that receives bright, indirect sunlight. Monsteras do best with moderate watering about once a week during the growing season, and less frequently during the fall and winter.",
     common_name: "Swiss Cheese ",
@@ -58,11 +63,7 @@ easy = Plant.create([
 ])
 
 succulents = Plant.create([
-    {sci_name: "Sansevieria",
-    care: "Can handle low or bright light. Let soil dry completely between waterings or roots will rot.",
-    common_name: "Snake Plant",
-    img_src: "https://cdn.shopify.com/s/files/1/0013/3529/6118/products/Nursery-Pot-4_Sansevieria-Zeylanica-4.jpg?v=1544499843"
-    },
+
     {sci_name: "Aloe brevifolia",
     care: "Full sun to partial shade. Not suited for indoor growing",
     common_name: "Short-leaved Aloe",
@@ -99,7 +100,7 @@ Plant.create([
     },
 ])
 Collection.create([
-    {name: "Succulents", user: "Claire", plants: tropics},
-    {name: "Tropical", user: "Chrysanthemum", plants: succulents},
+    {name: "Tropical", user: "Claire", plants: tropics},
+    {name: "Succulents", user: "Chrysanthemum", plants: succulents},
     {name: "Easy Growers", user: "Lily", plants: easy}
 ])

@@ -29,7 +29,7 @@ class PlantApi {
         .then (json => { 
             new Plant(json)
             const p = new Plant(json)
-            p.makePlantChecklist()
+            p.makePlantCheckBox()
             p.appendChecklist()
         })
     }
@@ -52,13 +52,11 @@ class PlantApi {
             .then(r => r.json())
                 .then(data => { 
                     data.forEach(element => {
-                        const p = new Plant(element)
-                        p.makePlantChecklist()
+                        let p = new Plant(element)
+                        p.makePlantCheckBox()
                         p.appendChecklist()
-                    }
-                )
-            }
-        )                
+                    })
+            })
     }
 
  
