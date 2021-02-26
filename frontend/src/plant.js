@@ -44,14 +44,14 @@ class Plant {
     htmlElement.appendChild(this.element)
   }
 
-  displayCare(e, element){
+  displayCare(element){
     let img = element.querySelector("img")
     let p = element.querySelector("p")
     img.hidden = true
     p.hidden = false
   }
 
-  displayPhoto(e, element){
+  displayPhoto(element){
     let img = element.querySelector("img")
     let p = element.querySelector("p")
     img.hidden = false
@@ -66,11 +66,5 @@ class Plant {
   appendChecklist (){
     checkBoxPlantDiv.appendChild(this.element)
   }
-  
-  // appendAndMakeCheckList(){
-  //   this.element.innerHTML += `<input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}">` 
-  //   checkBoxPlantDiv.appendChild(this.element)
-  // }
-
 
 }

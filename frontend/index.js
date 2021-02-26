@@ -47,7 +47,6 @@ addPlantShowFormBtn.addEventListener("click", () => {
 //hide and seek create collection form
 let showCollectionForm = false 
 makeCollectionBtn.addEventListener("click", () => {
-
   showCollectionForm = !showCollectionForm;
   if (showCollectionForm) {
     collectionFormContainer.hidden = false;

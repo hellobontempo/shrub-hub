@@ -54,7 +54,6 @@ class PlantApi {
                     data.forEach(element => {
                         let p = new Plant(element)
                         p.makePlantCheckBox()
-                        // p.appendChecklist()
                     })
             })
     }
