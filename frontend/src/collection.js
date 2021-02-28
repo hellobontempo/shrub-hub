@@ -40,8 +40,8 @@ class Collection {
 
     showCollection (event){ 
         let id = parseInt(`${event.target.id}`)
-        let c = Collection.all.filter(collection => collection.id === id,10)
-        let rest = Collection.all.filter(collection => collection.id !== id,10)
+        let c = Collection.all.filter(collection => collection.id === id, 10)
+        let rest = Collection.all.filter(collection => collection.id !== id, 10)
         c[0].renderCollection()
         let cDiv = c[0].div
         if (cDiv.hidden){
