@@ -56,7 +56,6 @@ class Plant {
     let div = document.createElement('div')
     div.innerHTML = `<div class="check-box-div"><input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}"></div>`
     this.element.appendChild(div)
-    // this.element.innerHTML += `<div class="check-box-div"><input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}"></div>`
   }
 
   removePlantCheckBox(){
@@ -66,6 +65,7 @@ class Plant {
   appendChecklist (){
     checkBoxPlantDiv.appendChild(this.element)
   }
+
   renderPlant(htmlElement){
     htmlElement.appendChild(this.element)
   }
