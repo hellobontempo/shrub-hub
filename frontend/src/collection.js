@@ -2,7 +2,6 @@ class Collection {
 
     static all = []
     static container = document.getElementById("plant-collection")
-   
     
     constructor({id, name, user, plants}){
     this.id = id

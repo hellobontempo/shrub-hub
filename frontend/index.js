@@ -2,22 +2,22 @@ const port = 'http://localhost:3000'
 const plantApi = new PlantApi(port)
 const collectionApi = new CollectionApi(port)
 
-// const plantCollection = document.getElementById("plant-collection")  moved to collection class?
 //navigation buttons: 
 const navBar = document.getElementById("nav-bar")
 const plantCollectionButton = document.getElementById("plant-collection-btn")
 const makeCollectionBtn = document.getElementById("make-collection-button")
 const addPlantShowFormBtn = document.querySelector("#add-plant-form-btn")
 const showMemoryGameBtn = document.getElementById("show-game-btn")
-const sortPlantsAtoZBtn = document.getElementById("sort-plants-a-z-btn")
 
 
+//forms and containers
 const plantFormContainer = document.querySelector("#create-a-plant-form")
 const addPlantForm = document.getElementById("add-plant-form")
 
 const collectionFormContainer = document.getElementById("collection-form-container")
 const collectionForm = document.getElementById("collection-form")
 
+//divs containing grids
 const checkBoxPlantDiv = document.getElementById("checkbox-plant-list")
 const collectionBtnDiv = document.getElementById("collection-buttons")
 const plantGrid = document.getElementById("plant-grid")
@@ -25,9 +25,12 @@ const gameDiv = document.getElementById("game")
 const gameGridDiv= document.getElementById("game-grid")
 const scoreDiv= document.getElementById("score")
 
+
 addPlantForm.addEventListener("submit", handleNewPlantSubmit)
 collectionForm.addEventListener("submit", handleSubmit)
+const sortPlantsAtoZBtn = document.getElementById("sort-plants-a-z-btn")
 sortPlantsAtoZBtn.addEventListener('click', Plant.sortPlantsAlpha)
+
 
 //hide and seek add plant form
 let addPlant = false 
