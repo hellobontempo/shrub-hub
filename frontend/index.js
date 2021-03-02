@@ -99,8 +99,10 @@ function handleSubmit(e){
   collectionApi.createCollection();
   e.target.reset();
   alert("Collection Successfully Created!");
+  showCollectionForm = false 
   makeCollectionBtn.innerText = "make a collection";
   collectionFormContainer.hidden = true;
+  Plant.removeCheckList();
   [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false]
 }
 
@@ -109,6 +111,7 @@ function handleNewPlantSubmit(e){
   plantApi.createPlant()
   e.target.reset()
   alert("Plant Successfully Created!")
+  addPlant = false
   addPlantShowFormBtn.innerText = "add a plant";
   plantFormContainer.style.display = "none";
   [makeCollectionBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false]
