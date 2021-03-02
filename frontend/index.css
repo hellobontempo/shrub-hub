@@ -79,6 +79,11 @@ button:hover {
   background-color:  rgb(247, 241, 238) ;
 }
 
+/* .description-container {
+  height: 150px;
+  width: 260px; 
+} */
+
 div.results {
     width: 500px;
     margin: auto;

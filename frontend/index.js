@@ -45,20 +45,24 @@ addPlantShowFormBtn.addEventListener("click", () => {
   });
 
 //hide and seek create collection form
-let showCollectionForm = false 
+let showCollectionForm = false
+let check = true
 makeCollectionBtn.addEventListener("click", () => {
   showCollectionForm = !showCollectionForm;
   if (showCollectionForm) {
     collectionFormContainer.hidden = false;
+    Plant.makeCheckList()
     Plant.appendPlants();
     [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [true, true, true];
     makeCollectionBtn.innerText = "hide form";
   }else {
+    Plant.removeCheckList()
     collectionFormContainer.hidden = true ;
     checkBoxPlantDiv.innerHTML = "";
     makeCollectionBtn.innerText = "make a collection";
     [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false];
   }
+  check = false
 })
 
 //hide and seek collection buttons
@@ -89,7 +93,6 @@ showMemoryGameBtn.addEventListener('click', () => {
       showMemoryGameBtn.innerText = "memory game"
     }
   });
-
 
 function handleSubmit(e){
   e.preventDefault();

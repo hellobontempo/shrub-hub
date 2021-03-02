@@ -16,12 +16,19 @@ class Plant {
       this.element.innerHTML = `<h3>${this.sci_name}</h3>
                                 <img id="img-${this.id}" src="${this.img_src}" alt="${this.sci_name}">
                                 <h4>${this.common_name}</h4>
-                                <p id="plant-${this.id}" hidden>${this.care}</p>`
-      this.element.innerHTML += `<div class="check-box-div"><input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}"></div>`
+                                <p class="description-container" id="plant-${this.id}" hidden>${this.care}</p>`
       this.element.addEventListener('mouseover', (e) => this.displayCare(this.element))
       this.element.addEventListener('mouseout', (e) => this.displayPhoto(this.element))
 
       Plant.all.push(this)
+  }
+
+  static makeCheckList(){
+    this.all.forEach(plant => plant.makePlantCheckBox())
+  }
+
+  static removeCheckList (){
+    this.all.forEach(plant => plant.removePlantCheckBox())
   }
 
   static appendPlants(){
@@ -45,6 +52,20 @@ class Plant {
     sortPlantsAtoZBtn.innerHTML = "alphabetized!"
   }
 
+  makePlantCheckBox(){
+    let div = document.createElement('div')
+    div.innerHTML = `<div class="check-box-div"><input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}"></div>`
+    this.element.appendChild(div)
+    // this.element.innerHTML += `<div class="check-box-div"><input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}"></div>`
+  }
+
+  removePlantCheckBox(){
+    let div = document.querySelector(".check-box-div")
+    div.remove()
+  }
+  appendChecklist (){
+    checkBoxPlantDiv.appendChild(this.element)
+  }
   renderPlant(htmlElement){
     htmlElement.appendChild(this.element)
   }
@@ -63,14 +84,6 @@ class Plant {
     p.hidden = true
   }
 
-  // makePlantCheckBox(){
-  //   this.element.innerHTML += `<div class="check-box-div"><input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}"></div>`
-  // }
 
-
-
-  appendChecklist (){
-    checkBoxPlantDiv.appendChild(this.element)
-  }
 
 }
