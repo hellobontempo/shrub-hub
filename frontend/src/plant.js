@@ -17,11 +17,15 @@ class Plant {
                                 <img id="img-${this.id}" src="${this.img_src}" alt="${this.sci_name}">
                                 <h4>${this.common_name}</h4>
                                 <p id="plant-${this.id}" hidden>${this.care}</p>`
-
+      this.element.innerHTML += `<div class="check-box-div"><input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}"></div>`
       this.element.addEventListener('mouseover', (e) => this.displayCare(this.element))
       this.element.addEventListener('mouseout', (e) => this.displayPhoto(this.element))
 
       Plant.all.push(this)
+  }
+
+  static appendPlants(){
+    this.all.forEach(plant => plant.renderPlant(checkBoxPlantDiv))  
   }
 
   static sortPlantsAlpha(){
@@ -59,9 +63,10 @@ class Plant {
     p.hidden = true
   }
 
-  makePlantCheckBox(){
-    this.element.innerHTML += `<input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}">`
-  }
+  // makePlantCheckBox(){
+  //   this.element.innerHTML += `<div class="check-box-div"><input type="checkbox" id="${this.id}" name="plant_ids" value="${this.id}"></div>`
+  // }
+
 
 
   appendChecklist (){

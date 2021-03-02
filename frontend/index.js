@@ -50,11 +50,12 @@ makeCollectionBtn.addEventListener("click", () => {
   showCollectionForm = !showCollectionForm;
   if (showCollectionForm) {
     collectionFormContainer.hidden = false;
-    Plant.all.forEach(plant => plant.appendChecklist());
+    Plant.appendPlants();
     [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [true, true, true];
     makeCollectionBtn.innerText = "hide form";
   }else {
     collectionFormContainer.hidden = true ;
+    checkBoxPlantDiv.innerHTML = "";
     makeCollectionBtn.innerText = "make a collection";
     [addPlantShowFormBtn.disabled, plantCollectionButton.disabled, showMemoryGameBtn.disabled] = [false, false, false];
   }

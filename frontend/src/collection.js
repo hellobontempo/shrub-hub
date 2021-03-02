@@ -33,6 +33,7 @@ class Collection {
     renderCollection(){   
         for (const collectionPlant of this.plants){ 
             let p = Plant.all.find(element => element.id === collectionPlant.id)
+            p.element.querySelector(".check-box-div").hidden = true
             p.renderPlant(this.grid)
         }
     }
@@ -50,6 +51,7 @@ class Collection {
             plantCollectionButton.disabled = true
         }else{
             cDiv.hidden = true
+            cDiv.querySelectorAll(".check-box-div").forEach(div => div.hidden = false)
             plantCollectionButton.disabled = false
             Collection.all.forEach(c => c.button.disabled = false)
         }

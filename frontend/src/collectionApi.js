@@ -11,7 +11,7 @@ class CollectionApi{
     getCollections() {
         fetch(this.baseUrl)
             .then(r => r.json())
-            .then(data => {
+             .then(data => {
                 data.forEach(collection => {
                     new Collection(collection).renderCollection()
 

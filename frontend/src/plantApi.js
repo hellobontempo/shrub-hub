@@ -27,10 +27,8 @@ class PlantApi {
         fetch(this.baseUrl, configObj)
         .then (r => r.json())
         .then (json => { 
-            new Plant(json)
             const p = new Plant(json)
-            p.makePlantCheckBox()
-            p.appendChecklist()
+            // p.makePlantCheckBox()
         })
     }
     
@@ -53,9 +51,10 @@ class PlantApi {
                 .then(data => { 
                     data.forEach(element => {
                         let p = new Plant(element)
-                        p.makePlantCheckBox()
+                        // p.makePlantCheckBox()
                     })
-            })
+                    
+                })
     }
 
  
