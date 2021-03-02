@@ -33,7 +33,6 @@ class Collection {
     renderCollection(){   
         for (const collectionPlant of this.plants){ 
             let p = Plant.all.find(element => element.id === collectionPlant.id)
-            // p.element.querySelector(".check-box-div").hidden = true
             p.renderPlant(this.grid)
         }
     }
