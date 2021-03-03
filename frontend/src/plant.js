@@ -13,12 +13,6 @@ class Plant {
       this.element = document.createElement('div')
       this.element.setAttribute("class", "box")
       this.element.id = `plant-${this.id}`
-      // this.element.innerHTML = `<h3>${this.sci_name}</h3>
-      //                           <img id="img-${this.id}" src="${this.img_src}" alt="${this.sci_name}">
-      //                           <h4>${this.common_name}</h4>
-      //                           <p id="plant-${this.id}" hidden>${this.care}</p>`
-      // this.element.addEventListener('mouseover', (e) => this.displayCare(this.element))
-      // this.element.addEventListener('mouseout', (e) => this.displayPhoto(this.element))
       this.front = document.createElement('div')
       this.front.id = `front-${this.id}`
       this.front.innerHTML = `<h3>${this.sci_name}</h3>
@@ -26,7 +20,7 @@ class Plant {
       this.back = document.createElement('div')
       this.back.id = `back-${this.id}`
       this.back.hidden = true
-      this.back.innerHTML = ` <h4>${this.common_name}</h4>
+      this.back.innerHTML = ` <h3>${this.common_name}</h3>
                               <p id="plant-${this.id}">${this.care}</p>`
       this.front.addEventListener('mouseover', (e) => this.displayBack(this))
       this.back.addEventListener('mouseout', (e) => this.displayFront(this))
@@ -91,21 +85,5 @@ class Plant {
     e.front.hidden = false
     e.back.hidden = true
   }
-
-  // displayCare(element){
-  //   let img = element.querySelector("img")
-  //   let p = element.querySelector("p")
-  //   img.hidden = true
-  //   p.hidden = false
-  // }
-
-  // displayPhoto(element){
-  //   let img = element.querySelector("img")
-  //   let p = element.querySelector("p")
-  //   img.hidden = false
-  //   p.hidden = true
-  // }
-
-
 
 }
