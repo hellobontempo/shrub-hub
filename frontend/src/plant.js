@@ -15,13 +15,13 @@ class Plant {
       this.element.id = `plant-${this.id}`
       this.front = document.createElement('div')
       this.front.id = `front-${this.id}`
-      this.front.innerHTML = `<h3>${this.sci_name}</h3>
-                              <img id="img-${this.id}" src="${this.img_src}" alt="${this.sci_name}">`
+      this.front.innerHTML = `<h3 class="sci_name">${this.sci_name}</h3>
+                              <img class="img_src" id="img-${this.id}" src="${this.img_src}" alt="${this.sci_name}">`
       this.back = document.createElement('div')
       this.back.id = `back-${this.id}`
       this.back.hidden = true
-      this.back.innerHTML = ` <h3>${this.common_name}</h3>
-                              <p id="plant-${this.id}">${this.care}</p>`
+      this.back.innerHTML = ` <h3 class="common_name">${this.common_name}</h3>
+                              <p class="care" id="plant-${this.id}">${this.care}</p>`
       this.front.addEventListener('mouseover', (e) => this.displayBack(this))
       this.back.addEventListener('mouseout', (e) => this.displayFront(this))
       this.element.appendChild(this.front)
