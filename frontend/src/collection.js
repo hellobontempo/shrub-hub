@@ -30,7 +30,21 @@ class Collection {
     }
 
     renderCollection(){   
-        for (const collectionPlant of this.plants){ 
+    let alphaPlants = this.plants.sort(function(a, b) {
+        let name1 = a.sci_name.toUpperCase(); // ignore upper and lowercase
+        let name2 = b.sci_name.toUpperCase(); // ignore upper and lowercase
+        if (name1 < name2) {
+          return -1;
+        }
+        if (name1 > name2) {
+          return 1;
+        }
+      
+        // names must be equal
+        return 0;
+      });
+
+        for (const collectionPlant of alphaPlants){ 
             let p = Plant.all.find(element => element.id === collectionPlant.id)
             p.renderPlant(this.grid)
         }
