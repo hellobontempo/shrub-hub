@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "plants#index"
   resources :plant_collections, only: [:index, :create, :new]
   resources :collections, only: [:index, :create, :new]
   resources :plants, only: [:index, :create, :show]
