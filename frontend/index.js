@@ -1,4 +1,4 @@
-const port = 'http://localhost:3000'
+const port = 'https://fast-earth-46805.herokuapp.com/'
 const plantApi = new PlantApi(port)
 const collectionApi = new CollectionApi(port)
 
