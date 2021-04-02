@@ -11,7 +11,7 @@ Run `bundle install` to get all of the necessary gems. Before getting started ru
 
 ## Attribution
 
-Thanks to this Marina Ferreira for putting together this helpful blog post! [Link to Medium Blog]( https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae)
+Thanks to this Marina Ferreira for putting together this helpful blog post! [Blog]( https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae)
 
 
 ## Contributors 
