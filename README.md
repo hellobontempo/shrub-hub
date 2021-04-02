@@ -2,7 +2,8 @@
 
 
 # Welcome to Shrub Hub.
-[Link to Shrub Hub](https://sleepy-volhard-b57b99.netlify.app/)
+[Shrub Hub](https://sleepy-volhard-b57b99.netlify.app/) 
+
 A web application to organize your plant collection or to learn more about plants! Hang out and stay a while, play the memory game while you're at it. 
 
 ## Getting Started
