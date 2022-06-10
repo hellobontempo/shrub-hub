@@ -6,7 +6,7 @@ on:
     types: labeled
     # Runs on PRs to main
     branches:
-      - main
+      - master
 jobs:
   approved_pr_job:
     if: "contains(github.event.pull_request.labels.*.name, 'approved_pr_job')"
