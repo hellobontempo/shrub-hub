@@ -23,8 +23,7 @@ jobs:
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
 workflows:
-  approved_pr_job:
-    when:
-      equal: ["approved_pr_job", << pipeline.parameters.GHA_Action >>]
-    jobs:
-      - approved_pr_job
+  when:
+    equal: ["approved_pr_job", << pipeline.parameters.GHA_Action >>]
+  jobs:
+    - approved_pr_job
