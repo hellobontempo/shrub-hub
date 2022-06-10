@@ -23,7 +23,7 @@ jobs:
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
 workflows:
+  when: << pipeline.parameters.GHA_Action >>
   approved_pr_job:
-    when: << pipeline.parameters.GHA_Action >>
     jobs:
       - approved_pr_job
