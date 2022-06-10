@@ -12,7 +12,5 @@ jobs:
         uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0
         env:
           CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
-        outputs:
-          random-number:
-            description: "Random number"
-            value: ${{ steps.random-number-generator.outputs.random-id }}
+      - name:
+        run: echo "::set-output name=action_fruit::strawberry"
