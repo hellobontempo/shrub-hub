@@ -35,7 +35,8 @@ workflows:
   test:
     jobs:
       - test
-  when: ["some custom id", << pipeline.parameters.GHA_Action >>]
+  when:
+    equal: ["some custom id", << pipeline.parameters.GHA_Action >>]
   approved_pr_job:
     jobs:
       - approved_pr_job
