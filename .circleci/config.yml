@@ -32,10 +32,10 @@ jobs:
             echo 'Some other test'
             echo 'This is the delivery pipeline'
 workflows:
+  test:
+    jobs:
+      - test
   when: ["some custom id", << pipeline.parameters.GHA_Action >>]
   approved_pr_job:
     jobs:
       - approved_pr_job
-  test:
-    jobs:
-      - test
