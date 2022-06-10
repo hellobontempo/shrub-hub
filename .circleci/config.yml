@@ -22,3 +22,8 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
+workflows:
+  approved_pr_job:
+    when: << pipeline.parameters.GHA_Action >>
+    jobs:
+      - approved_pr_job

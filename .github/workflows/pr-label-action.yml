@@ -3,11 +3,10 @@ on:
     types: labeled
 
 jobs:
-  approved_pr_job:
-    if: "contains(github.event.pull_request.labels.*.name, 'approved_pr_job')"
+  trigger-circleci:
     runs-on: ubuntu-latest
     steps:
-      - name: action name
+      - name: CircleCI Trigger on Pull Request
         uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0.4
         env:
           CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
