@@ -10,8 +10,9 @@ jobs:
       - name: CircleCI Trigger on Pull Request
         id: run-ui-tests
         uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0
-        outputs:
-        sum: # id of the output
-        description: "The sum of the inputs"
         env:
           CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
+        outputs:
+          random-number:
+            description: "Random number"
+            value: ${{ steps.random-number-generator.outputs.random-id }}
