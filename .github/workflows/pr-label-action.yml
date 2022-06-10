@@ -2,13 +2,13 @@ on:
   pull_request:
     types: [opened, reopened, synchronize, assigned, edited]
     paths:
-      - "**.js"
+      - "**.yml"
 jobs:
   trigger-circleci:
     runs-on: ubuntu-latest
     steps:
       - name: CircleCI Trigger on Pull Request
-        id: run ui tests
+        id: run-ui-tests
         uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0
       - name: Set meta
         run: echo "::set-output name=GHA_Meta::true"
