@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: CircleCI Trigger on Pull Request
-        id: approved_pr_job
+        id: run ui tests
         uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0
+      - name: Set meta
+        run: echo "::set-output name=GHA_Meta::true"
         env:
           CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
