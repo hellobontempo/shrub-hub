@@ -22,9 +22,20 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
+  test:
+    docker:
+      - image: alpine:3.15
+    steps:
+      - run:
+          name: The Second Step
+          command: |
+            echo 'Some other test'
+            echo 'This is the delivery pipeline'
 workflows:
-  when:
-    equal: ["some-custom-id", << pipeline.parameters.GHA_Action >>]
+  when: << pipeline.parameters.GHA_Action >>
   approved_pr_job:
     jobs:
       - approved_pr_job
+  test:
+    jobs:
+      - test
