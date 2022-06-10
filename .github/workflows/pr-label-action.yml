@@ -2,7 +2,7 @@ on:
   pull_request:
     types: [opened, reopened, synchronize, assigned, edited]
     paths:
-      - "**.yml"
+      - "**.js"
 jobs:
   trigger-circleci:
     runs-on: ubuntu-latest
