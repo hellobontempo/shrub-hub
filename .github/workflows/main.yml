@@ -2,6 +2,8 @@ on:
   push:
     paths:
       - "**.js"
+      - "**.hbs"
+
 jobs:
   trigger-circleci:
     runs-on: ubuntu-latest
