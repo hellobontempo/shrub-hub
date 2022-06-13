@@ -20,7 +20,7 @@ jobs:
     steps:
       - when:
         condition:
-          equal: ["run-ui-tests", << pipeline.parameters.GHA_Action >>]
+          equal: [run-ui-tests, << pipeline.parameters.GHA_Action >>]
       - run:
           name: The conditional step
           command: |
