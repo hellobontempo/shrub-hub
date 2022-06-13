@@ -1,17 +1,33 @@
 version: 2.1
-orbs:
-  hello: circleci/hello-build@0.0.5
-workflows:
-  "Hello Workflow":
-    jobs:
-      - hello/hello-build
 
-commands:
-  sayhello:
-    description: "A very simple command for demonstration purposes"
-    parameters:
-      to:
-        type: string
-        default: "Hello World"
+parameters:
+  GHA_Actor:
+    type: string
+    default: ""
+  GHA_Action:
+    type: string
+    default: ""
+  GHA_Event:
+    type: string
+    default: ""
+  GHA_Meta:
+    type: string
+    default: ""
+
+workflows:
+  version: 2.1
+  test:
+    when: << pipeline.parameters.GHA_Meta >>
+    jobs:
+      - approved_pr_job
+
+jobs:
+  approved_pr_job:
+    docker:
+      - image: alpine:3.15
     steps:
-      - run: echo << parameters.to >>
+      - run:
+          name: Some conditional step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
