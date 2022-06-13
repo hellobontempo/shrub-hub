@@ -1,3 +1,3 @@
 function someFunction () {
-    console.log('hmm ?')
+    console.log('ok ?')
 }
