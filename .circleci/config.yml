@@ -1,4 +1,5 @@
 version: 2.1
+
 parameters:
   GHA_Actor:
     type: string
@@ -13,6 +14,13 @@ parameters:
     type: string
     default: ""
 
+workflows:
+  test:
+    when:
+      equal: ["run-ui-tests", << pipeline.parameters.GHA_Action >>]
+    jobs:
+      - approved_pr_job
+
 jobs:
   approved_pr_job:
     docker:
@@ -23,10 +31,3 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
-
-workflows:
-  test:
-    when:
-      equal: ["run-ui-tests", << pipeline.parameters.GHA_Action >>]
-    jobs:
-      - approved_pr_job
