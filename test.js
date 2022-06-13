@@ -1,3 +1,3 @@
 function someFunction () {
-    console.log('please work?')
+    console.log('now work?')
 }
