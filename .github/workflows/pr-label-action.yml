@@ -5,15 +5,31 @@
 
 on:
   pull_request:
-    types: [opened, synchronize, labeled, unlabeled]
+    types:
+      - labeled
 
 jobs:
-  trigger-circleci:
-    if: "contains(github.event.pull_request.labels.*.name, 'bug')"
+  ready_for_code_review_job:
+    if: ${{ github.event.label.name == 'bug'  }}
     runs-on: ubuntu-latest
     steps:
-      - name: CircleCI Trigger on Pull Request
-        id: run-ui-tests
-        uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0
+      - uses: actions/checkout@v2
         env:
           CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
+
+      - name: run full spec suite
+        id: run-rspec-in-circle-ci
+        run: |
+          curl --request POST \
+              --url https://circleci.com/api/v2/project/gh/hellobontempo/shrub-hub/pipeline\
+              --header 'content-type: application/json' \
+              --data '{"branch":"${{ github.event.pull_request.head.ref }}","parameters":{"run-test": true}}'
+  # trigger-circleci:
+  #   if: "contains(github.event.pull_request.labels.*.name, 'bug')"
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: CircleCI Trigger on Pull Request
+  #       id: run-ui-tests
+  #       uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0
+  #       env:
+  #         CCI_TOKEN: ${{ secrets.CCI_TOKEN }}

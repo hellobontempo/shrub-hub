@@ -26,6 +26,6 @@ jobs:
 
 workflows:
   approved_pr_job:
-    when: << pipeline.parameters.GHA_Action >>
+    when: << pipeline.parameters.run-test >>
     jobs:
       - approved_pr_job
