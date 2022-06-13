@@ -35,7 +35,6 @@ jobs:
 
 workflows:
   approved_pr_job:
-    when:
-      equal: ["push", << pipeline.parameters.GHA_Event >>]
+    when: << pipeline.parameters.trigger >>
     jobs:
       - approved_pr_job
