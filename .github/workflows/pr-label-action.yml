@@ -9,6 +9,7 @@ on:
 
 jobs:
   trigger-circleci:
+    # if: "!contains(github.event.pull_request.labels.*.name, 'pr/no-changelog')"
     runs-on: ubuntu-latest
     steps:
       - name: CircleCI Trigger on Pull Request
