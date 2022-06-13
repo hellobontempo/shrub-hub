@@ -36,7 +36,6 @@ workflows:
     jobs:
       - test
   approved_pr_job:
-    when:
-      equal: ["pull_request", << pipeline.parameters.GHA_Event >>]
+    when: equal [ "pull_request", << pipeline.parameters.GHA_Event >> ]
     jobs:
       - approved_pr_job
