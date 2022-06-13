@@ -1,2 +1,2 @@
 function someFunction () {
-    console.log('some awga')
+    console.log('helllo awga')
