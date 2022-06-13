@@ -18,6 +18,7 @@ jobs:
     docker:
       - image: alpine:3.15
     steps:
+      - checkout
       - run:
           name: The First/Conditional Step
           command: |
@@ -27,6 +28,7 @@ jobs:
     docker:
       - image: alpine:3.15
     steps:
+      - checkout
       - run:
           name: The Second/Conditional Step
           command: |
@@ -37,7 +39,7 @@ workflows:
   another_job:
     jobs:
       - another_job
-  when: << pipeline.parameters.GHA_Action
   approved_pr_job:
+    when: << pipeline.parameters.GHA_Action
     jobs:
       - approved_pr_job
