@@ -1,3 +1,3 @@
 function someFunction () {
-    console.log(' now?')
+    console.log(' should?')
 }
