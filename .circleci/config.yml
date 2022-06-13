@@ -23,20 +23,9 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
-  test:
-    docker:
-      - image: alpine:3.15
-    steps:
-      - run:
-          name: The First Step
-          command: |
-            echo 'Hello There!'
+
 workflows:
-  test:
-    jobs:
-      - test
-  when:
-    equal: ["run-ui-tests", << pipeline.parameters.GHA_Action >>]
   approved_pr_job:
+    when: equal ["run-ui-tests", << pipeline.parameters.GHA_Action >>]
     jobs:
       - approved_pr_job
