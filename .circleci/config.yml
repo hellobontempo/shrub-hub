@@ -23,9 +23,21 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
+  another_job:
+    docker:
+      - image: alpine:3.15
+    steps:
+      - run:
+          name: The Second/Conditional Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
 
 workflows:
   approved_pr_job:
     when: equal ["run-ui-tests", << pipeline.parameters.GHA_Action >>]
     jobs:
       - approved_pr_job
+  another_job:
+    jobs:
+      - another_job
