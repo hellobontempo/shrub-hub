@@ -8,6 +8,6 @@ jobs:
     steps:
       - name: CircleCI Trigger on Pull Request
         id: run-ui-tests
-        uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0
+        uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0.4
         env:
           CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
