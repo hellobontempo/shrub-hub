@@ -1,3 +1,3 @@
 function someFunction () {
-    console.log(' edit')
+    console.log(' js')
 }
