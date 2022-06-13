@@ -15,6 +15,7 @@ parameters:
     default: ""
 
 workflows:
+  version: 2.1
   test:
     when: << pipeline.parameters.GHA_Action >>
     jobs:

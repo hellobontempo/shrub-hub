@@ -1,3 +1,2 @@
 function someFunction () {
-    console.log(' should?')
-}
+    console.log('some change')
