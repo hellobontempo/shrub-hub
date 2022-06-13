@@ -18,6 +18,9 @@ jobs:
     docker:
       - image: alpine:3.15
     steps:
+      - when:
+        condition:
+          equal: ["run-ui-tests", << pipeline.parameters.GHA_Action >>]
       - checkout
       - run:
           name: The First/Conditional Step
@@ -39,7 +42,7 @@ workflows:
   another_job:
     jobs:
       - another_job
-  when: << pipeline.parameters.GHA_Action >>
   approved_pr_job:
+    when: << pipeline.parameters.GHA_Action >>
     jobs:
       - approved_pr_job
