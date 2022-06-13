@@ -18,19 +18,14 @@ jobs:
     docker:
       - image: alpine:3.15
     steps:
-      - checkout
-      - when:
-        condition:
-          equal: [run-ui-tests, << pipeline.parameters.GHA_Action >>]
-          steps:
-            - run:
-                name: The conditional step
-                command: |
-                  echo 'Hello World!'
-                  echo 'This is the delivery pipeline'
+      - run:
+          name: The conditional step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
 
 workflows:
   test:
-    # when: << pipeline.parameters.GHA_Action >>
+    when: << pipeline.parameters.GHA_Action >>
     jobs:
       - approved_pr_job
