@@ -1,2 +1,20 @@
-- name: GitHub Action for Ember Testing
-  uses: alexlafroscia/actions-ember-testing@v1.0.0
+# on:
+#   push:
+#     paths:
+#       - "**.js"
+
+on:
+  pull_request:
+    types:
+      - labeled
+
+jobs:
+  trigger-circleci:
+    if: "contains(github.event.pull_request.labels.*.name, 'bug')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: CircleCI Trigger on Pull Request
+        id: run-ui-tests
+        uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0
+        env:
+          CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
