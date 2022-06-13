@@ -38,6 +38,7 @@ workflows:
     jobs:
       - another_job
   approved_pr_job:
-    when: << pipeline.parameters.GHA_Action >>
+    when:
+      equal: ["run-ui-tests", << pipeline.parameters.GHA_Action >>]
     jobs:
       - approved_pr_job
