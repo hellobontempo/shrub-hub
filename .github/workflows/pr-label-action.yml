@@ -1,10 +1,11 @@
 # on:
-#   push:
-#     paths:
-#       - "**.js"
+
 on:
   pull_request:
     types: [opened, synchronize, labeled, unlabeled]
+  push:
+    paths:
+      - "**.js"
 
 jobs:
   trigger-circleci:
