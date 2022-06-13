@@ -1,5 +1,7 @@
 on:
   push:
+    branches-ignore:
+      - "ui/**"
     paths:
       - "**.js"
       - "**.hbs"
@@ -9,9 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger CircleCI Pipeline
-        id: run-ui-tests
         uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0.4
         with:
-          GHA_Meta: "please-trigger"
+          GHA_Meta: "trigger-ui-tests"
         env:
           CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
