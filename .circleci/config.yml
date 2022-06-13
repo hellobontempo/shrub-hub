@@ -22,10 +22,11 @@ jobs:
           name: The conditional step
           command: |
             echo 'Hello World!'
+            echo "<< pipeline.parameters.GHA_Action"
+            echo "<< pipeline.parameters.GHA_Event"
             echo 'This is the delivery pipeline'
 
 workflows:
   test:
-    when: << pipeline.parameters.GHA_Action >>
     jobs:
       - approved_pr_job
