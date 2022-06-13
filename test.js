@@ -1,2 +1,2 @@
 function someFunction () {
-    console.log('some awfawfchange')
+    console.log('some awga')
