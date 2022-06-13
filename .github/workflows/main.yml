@@ -9,5 +9,7 @@ jobs:
       - name: Trigger CircleCI Pipeline
         id: run-ui-tests
         uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0.4
+        with:
+          GHA_Meta: "please-trigger"
         env:
           CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
