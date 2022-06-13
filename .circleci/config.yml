@@ -18,6 +18,9 @@ jobs:
     docker:
       - image: alpine:3.15
     steps:
+      when:
+        condition:
+          equal: [ "run-ui-tests" , << pipeline.parameters.GHA_Action >> ]
       - run:
           name: The conditional step
           command: |
@@ -26,6 +29,6 @@ jobs:
 
 workflows:
   test:
-    when: << pipeline.parameters.GHA_Action >>
+    # when: << pipeline.parameters.GHA_Action >>
     jobs:
       - approved_pr_job
